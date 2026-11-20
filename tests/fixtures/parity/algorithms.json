@@ -1,0 +1,1156 @@
+{
+  "grading": [
+    {
+      "kind": "word-match",
+      "payload": {
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "apple",
+            "right": "苹果"
+          },
+          {
+            "id": "p2",
+            "left": "banana",
+            "right": "香蕉"
+          }
+        ]
+      },
+      "value": {
+        "apple": "苹果",
+        "banana": "香蕉"
+      },
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "word-match",
+      "payload": {
+        "pairs": [
+          {
+            "id": "p1",
+            "left": "apple",
+            "right": "苹果"
+          },
+          {
+            "id": "p2",
+            "left": "banana",
+            "right": "香蕉"
+          }
+        ]
+      },
+      "value": {
+        "apple": "苹果",
+        "banana": "苹果"
+      },
+      "expect": {
+        "correct": false,
+        "partial": 0.5
+      }
+    },
+    {
+      "kind": "multiple-choice",
+      "payload": {
+        "stem": "选一个",
+        "options": [
+          {
+            "id": "a",
+            "label": "苹果",
+            "correct": true
+          },
+          {
+            "id": "b",
+            "label": "香蕉",
+            "correct": false
+          }
+        ]
+      },
+      "value": "b",
+      "expect": {
+        "correct": false,
+        "partial": 0
+      }
+    },
+    {
+      "kind": "multiple-choice",
+      "payload": {
+        "stem": "选一个",
+        "options": [
+          {
+            "id": "a",
+            "label": "苹果",
+            "correct": true
+          }
+        ]
+      },
+      "value": "苹果",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "cloze",
+      "payload": {
+        "sentence": "I ___ tea",
+        "options": [
+          {
+            "id": "a",
+            "label": "drink",
+            "correct": true
+          }
+        ],
+        "answer": "drink"
+      },
+      "value": "drink",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "spelling",
+      "payload": {
+        "definition": "苹果",
+        "answer": "apple",
+        "hint": "a____"
+      },
+      "value": "Apple",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "spelling",
+      "payload": {
+        "definition": "苹果",
+        "answer": "apple",
+        "hint": "a____"
+      },
+      "value": "appl",
+      "expect": {
+        "correct": false,
+        "partial": 0.5142857142857142
+      }
+    },
+    {
+      "kind": "dictation",
+      "payload": {
+        "audioText": "good morning",
+        "answer": "good morning",
+        "hint": ""
+      },
+      "value": "good mornin",
+      "expect": {
+        "correct": false,
+        "partial": 0.5684210526315789
+      }
+    },
+    {
+      "kind": "translate",
+      "payload": {
+        "source": "我喜欢茶",
+        "sourceLang": "zh",
+        "targetLang": "en",
+        "answer": "I like tea",
+        "references": [
+          "I love tea"
+        ]
+      },
+      "value": "I like tea",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "translate",
+      "payload": {
+        "source": "我喜欢茶",
+        "sourceLang": "zh",
+        "targetLang": "en",
+        "answer": "I like tea",
+        "references": [
+          "I love tea"
+        ]
+      },
+      "value": "I like coffee",
+      "expect": {
+        "correct": false,
+        "partial": 0.6666666666666666
+      }
+    },
+    {
+      "kind": "sentence-order",
+      "payload": {
+        "tokens": [
+          "tea",
+          "I",
+          "like"
+        ],
+        "answer": [
+          "I",
+          "like",
+          "tea"
+        ]
+      },
+      "value": [
+        "I",
+        "like",
+        "tea"
+      ],
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "sentence-order",
+      "payload": {
+        "tokens": [
+          "tea",
+          "I",
+          "like"
+        ],
+        "answer": [
+          "I",
+          "like",
+          "tea"
+        ]
+      },
+      "value": [
+        "I",
+        "tea",
+        "like"
+      ],
+      "expect": {
+        "correct": false,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "error-correction",
+      "payload": {
+        "wrong": "He go to school",
+        "answer": "He goes to school",
+        "errorTag": "subject-verb-agreement"
+      },
+      "value": "He goes to school",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "rewrite",
+      "payload": {
+        "source": "The book was read by me",
+        "instruction": "改成主动语态",
+        "answer": "I read the book",
+        "references": []
+      },
+      "value": "I read the book",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "shadowing",
+      "payload": {
+        "text": "I would like a cup of tea",
+        "translation": "我想要一杯茶",
+        "chunks": [],
+        "targetSeconds": 4
+      },
+      "value": "I would like a cup of tea",
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    },
+    {
+      "kind": "shadowing",
+      "payload": {
+        "text": "I would like a cup of tea",
+        "translation": "我想要一杯茶",
+        "chunks": [],
+        "targetSeconds": 4
+      },
+      "value": "",
+      "expect": {
+        "correct": false,
+        "partial": 0
+      }
+    },
+    {
+      "kind": "roleplay",
+      "payload": {
+        "scenario": "点单",
+        "turns": [
+          {
+            "id": "t1",
+            "speaker": "ai",
+            "en": "Hi",
+            "zh": "嗨"
+          },
+          {
+            "id": "t2",
+            "speaker": "user",
+            "en": "A tea please",
+            "zh": "一杯茶",
+            "expected": [
+              "tea"
+            ]
+          },
+          {
+            "id": "t3",
+            "speaker": "user",
+            "en": "Thanks",
+            "zh": "谢谢",
+            "expected": [
+              "thank"
+            ]
+          }
+        ]
+      },
+      "value": {
+        "t2": "A tea please",
+        "t3": "Thanks"
+      },
+      "expect": {
+        "correct": true,
+        "partial": 1
+      }
+    }
+  ],
+  "mastery": [
+    {
+      "snapshot": {
+        "mastery": 0,
+        "strength": 0,
+        "state": "new",
+        "reviewCount": 0,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 1,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 0,
+        "next": 26.5,
+        "delta": 26.5,
+        "strength": 0.3,
+        "state": "learning",
+        "reviewCount": 1,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 0,
+        "strength": 0,
+        "state": "new",
+        "reviewCount": 0,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 0.75,
+      "difficulty": 5,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 0,
+        "next": 29,
+        "delta": 29,
+        "strength": 0.225,
+        "state": "learning",
+        "reviewCount": 1,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 0,
+        "strength": 0,
+        "state": "new",
+        "reviewCount": 0,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 0.4,
+      "difficulty": 2,
+      "now": "2026-12-20T00:00:00.000Z",
+      "expect": {
+        "previous": 0,
+        "next": 3.7,
+        "delta": 3.7,
+        "strength": 0.12,
+        "state": "learning",
+        "reviewCount": 1,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 0,
+        "strength": 0,
+        "state": "new",
+        "reviewCount": 0,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 0,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 0,
+        "next": 0,
+        "delta": 0,
+        "strength": 0,
+        "state": "new",
+        "reviewCount": 1,
+        "lapseCount": 1,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 42.5,
+        "strength": 0.35,
+        "state": "reviewing",
+        "reviewCount": 4,
+        "lapseCount": 1,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 1,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 42.5,
+        "next": 54.3,
+        "delta": 11.8,
+        "strength": 0.545,
+        "state": "reviewing",
+        "reviewCount": 5,
+        "lapseCount": 1,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 42.5,
+        "strength": 0.35,
+        "state": "reviewing",
+        "reviewCount": 4,
+        "lapseCount": 1,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 0.75,
+      "difficulty": 5,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 42.5,
+        "next": 57.4,
+        "delta": 14.9,
+        "strength": 0.47,
+        "state": "reviewing",
+        "reviewCount": 5,
+        "lapseCount": 1,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 42.5,
+        "strength": 0.35,
+        "state": "reviewing",
+        "reviewCount": 4,
+        "lapseCount": 1,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 0.4,
+      "difficulty": 2,
+      "now": "2026-12-20T00:00:00.000Z",
+      "expect": {
+        "previous": 42.5,
+        "next": 23.1,
+        "delta": -19.4,
+        "strength": 0.268,
+        "state": "learning",
+        "reviewCount": 5,
+        "lapseCount": 1,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 42.5,
+        "strength": 0.35,
+        "state": "reviewing",
+        "reviewCount": 4,
+        "lapseCount": 1,
+        "lastReviewedAt": "2026-11-13T00:00:00.000Z"
+      },
+      "partialScore": 0,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 42.5,
+        "next": 33.8,
+        "delta": -8.7,
+        "strength": 0.245,
+        "state": "learning",
+        "reviewCount": 5,
+        "lapseCount": 2,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 85,
+        "strength": 0.8,
+        "state": "mastered",
+        "reviewCount": 9,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-09-01T00:00:00.000Z"
+      },
+      "partialScore": 1,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 85,
+        "next": 53.9,
+        "delta": -31.1,
+        "strength": 0.412,
+        "state": "reviewing",
+        "reviewCount": 10,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 85,
+        "strength": 0.8,
+        "state": "mastered",
+        "reviewCount": 9,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-09-01T00:00:00.000Z"
+      },
+      "partialScore": 0.75,
+      "difficulty": 5,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 85,
+        "next": 56.9,
+        "delta": -28.1,
+        "strength": 0.337,
+        "state": "reviewing",
+        "reviewCount": 10,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 85,
+        "strength": 0.8,
+        "state": "mastered",
+        "reviewCount": 9,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-09-01T00:00:00.000Z"
+      },
+      "partialScore": 0.4,
+      "difficulty": 2,
+      "now": "2026-12-20T00:00:00.000Z",
+      "expect": {
+        "previous": 85,
+        "next": 39.1,
+        "delta": -45.9,
+        "strength": 0.232,
+        "state": "learning",
+        "reviewCount": 10,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 85,
+        "strength": 0.8,
+        "state": "mastered",
+        "reviewCount": 9,
+        "lapseCount": 0,
+        "lastReviewedAt": "2026-09-01T00:00:00.000Z"
+      },
+      "partialScore": 0,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 85,
+        "next": 37.4,
+        "delta": -47.6,
+        "strength": 0.112,
+        "state": "lapsed",
+        "reviewCount": 10,
+        "lapseCount": 1,
+        "lapsed": true
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 60,
+        "strength": 0.5,
+        "state": "learning",
+        "reviewCount": 2,
+        "lapseCount": 0,
+        "lastReviewedAt": null
+      },
+      "partialScore": 1,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 60,
+        "next": 68.2,
+        "delta": 8.2,
+        "strength": 0.65,
+        "state": "reviewing",
+        "reviewCount": 3,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 60,
+        "strength": 0.5,
+        "state": "learning",
+        "reviewCount": 2,
+        "lapseCount": 0,
+        "lastReviewedAt": null
+      },
+      "partialScore": 0.75,
+      "difficulty": 5,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 60,
+        "next": 70,
+        "delta": 10,
+        "strength": 0.575,
+        "state": "reviewing",
+        "reviewCount": 3,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 60,
+        "strength": 0.5,
+        "state": "learning",
+        "reviewCount": 2,
+        "lapseCount": 0,
+        "lastReviewedAt": null
+      },
+      "partialScore": 0.4,
+      "difficulty": 2,
+      "now": "2026-12-20T00:00:00.000Z",
+      "expect": {
+        "previous": 60,
+        "next": 52.5,
+        "delta": -7.5,
+        "strength": 0.47,
+        "state": "reviewing",
+        "reviewCount": 3,
+        "lapseCount": 0,
+        "lapsed": false
+      }
+    },
+    {
+      "snapshot": {
+        "mastery": 60,
+        "strength": 0.5,
+        "state": "learning",
+        "reviewCount": 2,
+        "lapseCount": 0,
+        "lastReviewedAt": null
+      },
+      "partialScore": 0,
+      "difficulty": 3,
+      "now": "2026-11-14T00:00:00.000Z",
+      "expect": {
+        "previous": 60,
+        "next": 47.7,
+        "delta": -12.3,
+        "strength": 0.35,
+        "state": "reviewing",
+        "reviewCount": 3,
+        "lapseCount": 1,
+        "lapsed": false
+      }
+    }
+  ],
+  "srs": [
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 0
+      },
+      "rating": "again",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.3,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 1,
+        "dueAt": "2026-11-14T08:40:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 0
+      },
+      "rating": "hard",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.35,
+        "intervalDays": 1,
+        "repetition": 1,
+        "lapseCount": 0,
+        "dueAt": "2026-11-15T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 0
+      },
+      "rating": "good",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.5,
+        "intervalDays": 1,
+        "repetition": 1,
+        "lapseCount": 0,
+        "dueAt": "2026-11-15T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 0
+      },
+      "rating": "easy",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.65,
+        "intervalDays": 2,
+        "repetition": 1,
+        "lapseCount": 0,
+        "dueAt": "2026-11-16T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 1,
+        "repetition": 1,
+        "lapseCount": 0
+      },
+      "rating": "again",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.3,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 1,
+        "dueAt": "2026-11-14T08:40:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 1,
+        "repetition": 1,
+        "lapseCount": 0
+      },
+      "rating": "hard",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.35,
+        "intervalDays": 2,
+        "repetition": 2,
+        "lapseCount": 0,
+        "dueAt": "2026-11-16T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 1,
+        "repetition": 1,
+        "lapseCount": 0
+      },
+      "rating": "good",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.5,
+        "intervalDays": 3,
+        "repetition": 2,
+        "lapseCount": 0,
+        "dueAt": "2026-11-17T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 1,
+        "repetition": 1,
+        "lapseCount": 0
+      },
+      "rating": "easy",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.65,
+        "intervalDays": 4,
+        "repetition": 2,
+        "lapseCount": 0,
+        "dueAt": "2026-11-18T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 10,
+        "repetition": 3,
+        "lapseCount": 1
+      },
+      "rating": "again",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.3,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 2,
+        "dueAt": "2026-11-14T08:40:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 10,
+        "repetition": 3,
+        "lapseCount": 1
+      },
+      "rating": "hard",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.35,
+        "intervalDays": 12,
+        "repetition": 4,
+        "lapseCount": 1,
+        "dueAt": "2026-11-26T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 10,
+        "repetition": 3,
+        "lapseCount": 1
+      },
+      "rating": "good",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.5,
+        "intervalDays": 25,
+        "repetition": 4,
+        "lapseCount": 1,
+        "dueAt": "2026-12-09T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.5,
+        "intervalDays": 10,
+        "repetition": 3,
+        "lapseCount": 1
+      },
+      "rating": "easy",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.65,
+        "intervalDays": 34,
+        "repetition": 4,
+        "lapseCount": 1,
+        "dueAt": "2026-12-18T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.8,
+        "intervalDays": 170,
+        "repetition": 6,
+        "lapseCount": 0
+      },
+      "rating": "again",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.5999999999999996,
+        "intervalDays": 0,
+        "repetition": 0,
+        "lapseCount": 1,
+        "dueAt": "2026-11-14T08:40:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.8,
+        "intervalDays": 170,
+        "repetition": 6,
+        "lapseCount": 0
+      },
+      "rating": "hard",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.65,
+        "intervalDays": 180,
+        "repetition": 7,
+        "lapseCount": 0,
+        "dueAt": "2027-05-13T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.8,
+        "intervalDays": 170,
+        "repetition": 6,
+        "lapseCount": 0
+      },
+      "rating": "good",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.8,
+        "intervalDays": 180,
+        "repetition": 7,
+        "lapseCount": 0,
+        "dueAt": "2027-05-13T08:30:00.000Z"
+      }
+    },
+    {
+      "state": {
+        "ease": 2.8,
+        "intervalDays": 170,
+        "repetition": 6,
+        "lapseCount": 0
+      },
+      "rating": "easy",
+      "now": "2026-11-14T08:30:00.000Z",
+      "expect": {
+        "ease": 2.8,
+        "intervalDays": 180,
+        "repetition": 7,
+        "lapseCount": 0,
+        "dueAt": "2027-05-13T08:30:00.000Z"
+      }
+    }
+  ],
+  "xp": [
+    {
+      "total": 0,
+      "expect": {
+        "total": 0,
+        "level": 1,
+        "current": 0,
+        "required": 500,
+        "progress": 0
+      }
+    },
+    {
+      "total": 120,
+      "expect": {
+        "total": 120,
+        "level": 1,
+        "current": 120,
+        "required": 500,
+        "progress": 0.24
+      }
+    },
+    {
+      "total": 499,
+      "expect": {
+        "total": 499,
+        "level": 1,
+        "current": 499,
+        "required": 500,
+        "progress": 1
+      }
+    },
+    {
+      "total": 500,
+      "expect": {
+        "total": 500,
+        "level": 2,
+        "current": 0,
+        "required": 560,
+        "progress": 0
+      }
+    },
+    {
+      "total": 1059,
+      "expect": {
+        "total": 1059,
+        "level": 2,
+        "current": 559,
+        "required": 560,
+        "progress": 1
+      }
+    },
+    {
+      "total": 1060,
+      "expect": {
+        "total": 1060,
+        "level": 3,
+        "current": 0,
+        "required": 627,
+        "progress": 0
+      }
+    },
+    {
+      "total": 5000,
+      "expect": {
+        "total": 5000,
+        "level": 7,
+        "current": 943,
+        "required": 987,
+        "progress": 0.96
+      }
+    }
+  ],
+  "reviewXp": [
+    {
+      "rating": "again",
+      "expect": 4
+    },
+    {
+      "rating": "hard",
+      "expect": 5
+    },
+    {
+      "rating": "good",
+      "expect": 6
+    },
+    {
+      "rating": "easy",
+      "expect": 7
+    }
+  ],
+  "selection": [
+    {
+      "pool": [
+        {
+          "id": "ex_1",
+          "difficulty": 1
+        },
+        {
+          "id": "ex_2",
+          "difficulty": 3
+        },
+        {
+          "id": "ex_3",
+          "difficulty": 3
+        },
+        {
+          "id": "ex_4",
+          "difficulty": 5
+        }
+      ],
+      "targetDifficulty": 3,
+      "count": 2,
+      "seenAt": {},
+      "now": "2026-11-14T12:00:00.000Z",
+      "expectIds": [
+        "ex_2",
+        "ex_3"
+      ]
+    },
+    {
+      "pool": [
+        {
+          "id": "ex_1",
+          "difficulty": 1
+        },
+        {
+          "id": "ex_2",
+          "difficulty": 3
+        },
+        {
+          "id": "ex_3",
+          "difficulty": 3
+        },
+        {
+          "id": "ex_4",
+          "difficulty": 5
+        }
+      ],
+      "targetDifficulty": 3,
+      "count": 2,
+      "seenAt": {
+        "ex_2": 1794571200000
+      },
+      "now": "2026-11-14T12:00:00.000Z",
+      "expectIds": [
+        "ex_3",
+        "ex_2"
+      ]
+    },
+    {
+      "pool": [
+        {
+          "id": "ex_1",
+          "difficulty": 1
+        },
+        {
+          "id": "ex_2",
+          "difficulty": 3
+        },
+        {
+          "id": "ex_3",
+          "difficulty": 3
+        },
+        {
+          "id": "ex_4",
+          "difficulty": 5
+        }
+      ],
+      "targetDifficulty": 5,
+      "count": 4,
+      "seenAt": {
+        "ex_4": 1793534400000
+      },
+      "now": "2026-11-14T12:00:00.000Z",
+      "expectIds": [
+        "ex_4",
+        "ex_2",
+        "ex_3",
+        "ex_1"
+      ]
+    }
+  ]
+}

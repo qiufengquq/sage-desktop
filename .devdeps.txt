@@ -1,0 +1,10 @@
+vite
+@vitejs/plugin-react
+typescript
+@types/react
+@types/react-dom
+@types/node
+tailwindcss
+@tailwindcss/vite
+tw-animate-css
+@tauri-apps/cli

@@ -1,0 +1,2505 @@
+{
+  "version": "pack-5e62c5f8a2c5",
+  "tables": {
+    "entities": [
+      {
+        "id": "w_ubiquitous",
+        "kind": "word",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "w_resilient",
+        "kind": "word",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "w_mitigate",
+        "kind": "word",
+        "difficulty": 5,
+        "level": "C1"
+      },
+      {
+        "id": "w_ambiguous",
+        "kind": "word",
+        "difficulty": 5,
+        "level": "C1"
+      },
+      {
+        "id": "w_deliberate",
+        "kind": "word",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "w_scrutiny",
+        "kind": "word",
+        "difficulty": 5,
+        "level": "C1"
+      },
+      {
+        "id": "w_coherent",
+        "kind": "word",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "w_accumulate",
+        "kind": "word",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_reluctant",
+        "kind": "word",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_contemplate",
+        "kind": "word",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "w_sustain",
+        "kind": "word",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_inevitable",
+        "kind": "word",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_perceive",
+        "kind": "word",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_fragile",
+        "kind": "word",
+        "difficulty": 2,
+        "level": "A2"
+      },
+      {
+        "id": "w_diligent",
+        "kind": "word",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_profound",
+        "kind": "word",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "w_take_into_account",
+        "kind": "phrase",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "w_in_light_of",
+        "kind": "phrase",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "g_present_perfect",
+        "kind": "grammar",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "g_past_simple",
+        "kind": "grammar",
+        "difficulty": 1,
+        "level": "A2"
+      },
+      {
+        "id": "g_relative_clause",
+        "kind": "grammar",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "g_passive_voice",
+        "kind": "grammar",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "g_comparative",
+        "kind": "grammar",
+        "difficulty": 2,
+        "level": "A2"
+      },
+      {
+        "id": "g_modal_verbs",
+        "kind": "grammar",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "g_article_definite",
+        "kind": "grammar",
+        "difficulty": 2,
+        "level": "A2"
+      },
+      {
+        "id": "g_infinitive",
+        "kind": "grammar",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "g_prepositional_phrase",
+        "kind": "grammar",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "g_sentence_structure",
+        "kind": "grammar",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "s_small_habits",
+        "kind": "sentence",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "s_meeting_shift",
+        "kind": "sentence",
+        "difficulty": 3,
+        "level": "B1"
+      },
+      {
+        "id": "s_passive_study",
+        "kind": "sentence",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "s_travel_checkin",
+        "kind": "sentence",
+        "difficulty": 2,
+        "level": "A2"
+      },
+      {
+        "id": "s_coffee_small_talk",
+        "kind": "sentence",
+        "difficulty": 2,
+        "level": "A2"
+      },
+      {
+        "id": "s_argument_quality",
+        "kind": "sentence",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "s_mitigate_risk",
+        "kind": "sentence",
+        "difficulty": 4,
+        "level": "B2"
+      },
+      {
+        "id": "s_profound_effect",
+        "kind": "sentence",
+        "difficulty": 3,
+        "level": "B1"
+      }
+    ],
+    "vocabulary": [
+      {
+        "entity_id": "w_ubiquitous",
+        "term": "ubiquitous",
+        "phonetic": "/juːˈbɪkwɪtəs/",
+        "pos": "adjective",
+        "contexts_json": "[\"academic\",\"daily\"]"
+      },
+      {
+        "entity_id": "w_resilient",
+        "term": "resilient",
+        "phonetic": "/rɪˈzɪliənt/",
+        "pos": "adjective",
+        "contexts_json": "[\"academic\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_mitigate",
+        "term": "mitigate",
+        "phonetic": "/ˈmɪtɪɡeɪt/",
+        "pos": "verb",
+        "contexts_json": "[\"academic\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_ambiguous",
+        "term": "ambiguous",
+        "phonetic": "/æmˈbɪɡjuəs/",
+        "pos": "adjective",
+        "contexts_json": "[\"academic\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_deliberate",
+        "term": "deliberate",
+        "phonetic": "/dɪˈlɪbərət/",
+        "pos": "adjective",
+        "contexts_json": "[\"academic\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_scrutiny",
+        "term": "scrutiny",
+        "phonetic": "/ˈskruːtəni/",
+        "pos": "noun",
+        "contexts_json": "[\"academic\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_coherent",
+        "term": "coherent",
+        "phonetic": "/kəʊˈhɪərənt/",
+        "pos": "adjective",
+        "contexts_json": "[\"academic\",\"writing\"]"
+      },
+      {
+        "entity_id": "w_accumulate",
+        "term": "accumulate",
+        "phonetic": "/əˈkjuːmjəleɪt/",
+        "pos": "verb",
+        "contexts_json": "[\"daily\",\"academic\"]"
+      },
+      {
+        "entity_id": "w_reluctant",
+        "term": "reluctant",
+        "phonetic": "/rɪˈlʌktənt/",
+        "pos": "adjective",
+        "contexts_json": "[\"daily\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_contemplate",
+        "term": "contemplate",
+        "phonetic": "/ˈkɒntəmpleɪt/",
+        "pos": "verb",
+        "contexts_json": "[\"academic\",\"daily\"]"
+      },
+      {
+        "entity_id": "w_sustain",
+        "term": "sustain",
+        "phonetic": "/səˈsteɪn/",
+        "pos": "verb",
+        "contexts_json": "[\"academic\",\"daily\"]"
+      },
+      {
+        "entity_id": "w_inevitable",
+        "term": "inevitable",
+        "phonetic": "/ɪnˈevɪtəbl/",
+        "pos": "adjective",
+        "contexts_json": "[\"daily\",\"academic\"]"
+      },
+      {
+        "entity_id": "w_perceive",
+        "term": "perceive",
+        "phonetic": "/pəˈsiːv/",
+        "pos": "verb",
+        "contexts_json": "[\"academic\"]"
+      },
+      {
+        "entity_id": "w_fragile",
+        "term": "fragile",
+        "phonetic": "/ˈfrædʒaɪl/",
+        "pos": "adjective",
+        "contexts_json": "[\"daily\"]"
+      },
+      {
+        "entity_id": "w_diligent",
+        "term": "diligent",
+        "phonetic": "/ˈdɪlɪdʒənt/",
+        "pos": "adjective",
+        "contexts_json": "[\"daily\",\"workplace\"]"
+      },
+      {
+        "entity_id": "w_profound",
+        "term": "profound",
+        "phonetic": "/prəˈfaʊnd/",
+        "pos": "adjective",
+        "contexts_json": "[\"academic\"]"
+      },
+      {
+        "entity_id": "w_take_into_account",
+        "term": "take into account",
+        "phonetic": "/teɪk ˈɪntuː əˈkaʊnt/",
+        "pos": "phrase",
+        "contexts_json": "[\"workplace\",\"academic\"]"
+      },
+      {
+        "entity_id": "w_in_light_of",
+        "term": "in light of",
+        "phonetic": "/ɪn laɪt əv/",
+        "pos": "phrase",
+        "contexts_json": "[\"academic\",\"workplace\"]"
+      }
+    ],
+    "word_meanings": [
+      {
+        "entity_id": "w_ubiquitous",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "无处不在的；普遍存在的",
+        "definition_en": "present or found everywhere"
+      },
+      {
+        "entity_id": "w_resilient",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "有韧性的；能迅速恢复的",
+        "definition_en": "able to recover quickly from difficulties"
+      },
+      {
+        "entity_id": "w_mitigate",
+        "sort_order": 0,
+        "pos": "verb",
+        "definition": "减轻；缓和（不良影响）",
+        "definition_en": "to make something bad less severe"
+      },
+      {
+        "entity_id": "w_ambiguous",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "模棱两可的；含糊不清的",
+        "definition_en": "open to more than one interpretation"
+      },
+      {
+        "entity_id": "w_deliberate",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "深思熟虑的；故意的",
+        "definition_en": "done consciously and intentionally"
+      },
+      {
+        "entity_id": "w_deliberate",
+        "sort_order": 1,
+        "pos": "verb",
+        "definition": "仔细考虑（deliberate on）",
+        "definition_en": "to think carefully about something"
+      },
+      {
+        "entity_id": "w_scrutiny",
+        "sort_order": 0,
+        "pos": "noun",
+        "definition": "仔细审查；细看",
+        "definition_en": "critical observation or examination"
+      },
+      {
+        "entity_id": "w_coherent",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "连贯的；条理清楚的",
+        "definition_en": "logical and consistent"
+      },
+      {
+        "entity_id": "w_accumulate",
+        "sort_order": 0,
+        "pos": "verb",
+        "definition": "积累；逐渐增加",
+        "definition_en": "to gather together over time"
+      },
+      {
+        "entity_id": "w_reluctant",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "不情愿的；勉强的",
+        "definition_en": "unwilling and hesitant"
+      },
+      {
+        "entity_id": "w_contemplate",
+        "sort_order": 0,
+        "pos": "verb",
+        "definition": "沉思；考虑",
+        "definition_en": "to think about something deeply"
+      },
+      {
+        "entity_id": "w_sustain",
+        "sort_order": 0,
+        "pos": "verb",
+        "definition": "维持；支撑",
+        "definition_en": "to keep something going over time"
+      },
+      {
+        "entity_id": "w_inevitable",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "不可避免的；必然发生的",
+        "definition_en": "certain to happen"
+      },
+      {
+        "entity_id": "w_perceive",
+        "sort_order": 0,
+        "pos": "verb",
+        "definition": "察觉；认为",
+        "definition_en": "to become aware of, or to interpret"
+      },
+      {
+        "entity_id": "w_fragile",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "易碎的；脆弱的",
+        "definition_en": "easily broken or damaged"
+      },
+      {
+        "entity_id": "w_diligent",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "勤勉的；用功的",
+        "definition_en": "showing care and effort in work"
+      },
+      {
+        "entity_id": "w_profound",
+        "sort_order": 0,
+        "pos": "adjective",
+        "definition": "深刻的；影响深远的",
+        "definition_en": "very great or intense; deep"
+      },
+      {
+        "entity_id": "w_take_into_account",
+        "sort_order": 0,
+        "pos": "phrase",
+        "definition": "把……考虑在内",
+        "definition_en": "to consider something when making a decision"
+      },
+      {
+        "entity_id": "w_in_light_of",
+        "sort_order": 0,
+        "pos": "phrase",
+        "definition": "鉴于；考虑到",
+        "definition_en": "because of, considering"
+      }
+    ],
+    "word_examples": [
+      {
+        "id": "w_ubiquitous_ex1",
+        "entity_id": "w_ubiquitous",
+        "sort_order": 0,
+        "en": "Smartphones have become ubiquitous in daily life.",
+        "zh": "智能手机在日常生活中已经无处不在。",
+        "highlight": "ubiquitous"
+      },
+      {
+        "id": "w_ubiquitous_ex2",
+        "entity_id": "w_ubiquitous",
+        "sort_order": 1,
+        "en": "The company's logo is ubiquitous on every campus.",
+        "zh": "这家公司的标志在每个校园里随处可见。",
+        "highlight": "ubiquitous"
+      },
+      {
+        "id": "w_resilient_ex1",
+        "entity_id": "w_resilient",
+        "sort_order": 0,
+        "en": "Children are often more resilient than adults expect.",
+        "zh": "孩子往往比大人以为的更有韧性。",
+        "highlight": "resilient"
+      },
+      {
+        "id": "w_mitigate_ex1",
+        "entity_id": "w_mitigate",
+        "sort_order": 0,
+        "en": "Planting trees can mitigate the effects of urban heat.",
+        "zh": "植树可以减轻城市热岛效应。",
+        "highlight": "mitigate"
+      },
+      {
+        "id": "w_mitigate_ex2",
+        "entity_id": "w_mitigate",
+        "sort_order": 1,
+        "en": "The team took steps to mitigate the risk.",
+        "zh": "团队采取措施来降低风险。",
+        "highlight": "mitigate"
+      },
+      {
+        "id": "w_ambiguous_ex1",
+        "entity_id": "w_ambiguous",
+        "sort_order": 0,
+        "en": "The wording of the contract is deliberately ambiguous.",
+        "zh": "合同的措辞被刻意写得含糊。",
+        "highlight": "ambiguous"
+      },
+      {
+        "id": "w_deliberate_ex1",
+        "entity_id": "w_deliberate",
+        "sort_order": 0,
+        "en": "Her silence was a deliberate choice, not an accident.",
+        "zh": "她的沉默是有意为之，并非偶然。",
+        "highlight": "deliberate"
+      },
+      {
+        "id": "w_scrutiny_ex1",
+        "entity_id": "w_scrutiny",
+        "sort_order": 0,
+        "en": "The proposal did not survive public scrutiny.",
+        "zh": "该提案没能经受住公众的审查。",
+        "highlight": "scrutiny"
+      },
+      {
+        "id": "w_coherent_ex1",
+        "entity_id": "w_coherent",
+        "sort_order": 0,
+        "en": "A coherent argument needs evidence at every step.",
+        "zh": "一个连贯的论点需要在每一步都有证据。",
+        "highlight": "coherent"
+      },
+      {
+        "id": "w_accumulate_ex1",
+        "entity_id": "w_accumulate",
+        "sort_order": 0,
+        "en": "Small habits accumulate into visible progress.",
+        "zh": "微小的习惯会积累成可见的进步。",
+        "highlight": "accumulate"
+      },
+      {
+        "id": "w_reluctant_ex1",
+        "entity_id": "w_reluctant",
+        "sort_order": 0,
+        "en": "He was reluctant to admit that he needed help.",
+        "zh": "他不愿承认自己需要帮助。",
+        "highlight": "reluctant"
+      },
+      {
+        "id": "w_contemplate_ex1",
+        "entity_id": "w_contemplate",
+        "sort_order": 0,
+        "en": "She sat by the window and contemplated the question.",
+        "zh": "她坐在窗边，思考着这个问题。",
+        "highlight": "contemplated"
+      },
+      {
+        "id": "w_sustain_ex1",
+        "entity_id": "w_sustain",
+        "sort_order": 0,
+        "en": "It is hard to sustain attention for ninety minutes.",
+        "zh": "很难维持九十分钟的注意力。",
+        "highlight": "sustain"
+      },
+      {
+        "id": "w_inevitable_ex1",
+        "entity_id": "w_inevitable",
+        "sort_order": 0,
+        "en": "Some mistakes are inevitable when you learn a language.",
+        "zh": "学一门语言时，有些错误是不可避免的。",
+        "highlight": "inevitable"
+      },
+      {
+        "id": "w_perceive_ex1",
+        "entity_id": "w_perceive",
+        "sort_order": 0,
+        "en": "Learners often perceive grammar as a set of rules to memorize.",
+        "zh": "学习者常把语法看作一套需要背诵的规则。",
+        "highlight": "perceive"
+      },
+      {
+        "id": "w_fragile_ex1",
+        "entity_id": "w_fragile",
+        "sort_order": 0,
+        "en": "Motivation is fragile in the first two weeks.",
+        "zh": "在最初两周，动力是很脆弱的。",
+        "highlight": "fragile"
+      },
+      {
+        "id": "w_diligent_ex1",
+        "entity_id": "w_diligent",
+        "sort_order": 0,
+        "en": "A diligent review schedule beats a long cramming session.",
+        "zh": "勤勉的复习计划胜过长时间的突击。",
+        "highlight": "diligent"
+      },
+      {
+        "id": "w_profound_ex1",
+        "entity_id": "w_profound",
+        "sort_order": 0,
+        "en": "Reading fiction has a profound effect on empathy.",
+        "zh": "阅读小说对共情能力有深远影响。",
+        "highlight": "profound"
+      },
+      {
+        "id": "w_take_into_account_ex1",
+        "entity_id": "w_take_into_account",
+        "sort_order": 0,
+        "en": "The plan takes your schedule into account.",
+        "zh": "这份计划把你的时间安排考虑在内了。",
+        "highlight": "takes your schedule into account"
+      },
+      {
+        "id": "w_in_light_of_ex1",
+        "entity_id": "w_in_light_of",
+        "sort_order": 0,
+        "en": "In light of recent results, we adjusted the plan.",
+        "zh": "鉴于最近的结果，我们调整了计划。",
+        "highlight": "In light of"
+      }
+    ],
+    "grammar_points": [
+      {
+        "entity_id": "g_present_perfect",
+        "title": "现在完成时",
+        "title_en": "Present Perfect",
+        "category": "tense",
+        "summary": "强调过去发生的事与现在的联系，而不是动作本身的时间。",
+        "structure": "主语 + have/has + 过去分词",
+        "explanation": "现在完成时把注意力放在「结果或经历」上。与一般过去时不同，它不交代具体时间点，因此常与 already、yet、ever、since、for 连用。当句子出现明确的过去时间（yesterday、in 2020）时，必须改用一般过去时。"
+      },
+      {
+        "entity_id": "g_past_simple",
+        "title": "一般过去时",
+        "title_en": "Past Simple",
+        "category": "tense",
+        "summary": "描述在过去某个明确时间发生并结束的动作。",
+        "structure": "主语 + 动词过去式",
+        "explanation": "一般过去时需要一个可识别的时间参照：yesterday、last week、two days ago、when I was a child。它关注「动作发生过」，不关注对现在的影响。"
+      },
+      {
+        "entity_id": "g_relative_clause",
+        "title": "定语从句",
+        "title_en": "Relative Clause",
+        "category": "clause",
+        "summary": "用 who/which/that/whose/where 把一句话变成名词的修饰成分。",
+        "structure": "名词 + 关系词 + 从句",
+        "explanation": "限定性定语从句紧跟先行词，不用逗号；非限定性定语从句用逗号隔开，且不能用 that。关系词在从句中作宾语时可以省略，作主语时不可省略。"
+      },
+      {
+        "entity_id": "g_passive_voice",
+        "title": "被动语态",
+        "title_en": "Passive Voice",
+        "category": "voice",
+        "summary": "动作承受者作主语，强调「被怎样」，弱化执行者。",
+        "structure": "主语 + be + 过去分词 (+ by ...)",
+        "explanation": "学术与工作场景中，被动语态让表达更客观。be 的时态决定整句时间，过去分词决定动作。只有及物动词可以变被动。"
+      },
+      {
+        "entity_id": "g_comparative",
+        "title": "比较级与最高级",
+        "title_en": "Comparatives & Superlatives",
+        "category": "sentence-structure",
+        "summary": "比较两者用 -er/more，比较三者及以上用 -est/most。",
+        "structure": "A + 比较级 + than + B；the + 最高级 + in/of 范围",
+        "explanation": "单音节词通常加 -er/-est，三音节及以上用 more/most。避免双重比较（more better），也避免在同一句里既用 than 又用最高级。"
+      },
+      {
+        "entity_id": "g_modal_verbs",
+        "title": "情态动词",
+        "title_en": "Modal Verbs",
+        "category": "modality",
+        "summary": "can/may/must/should 表达能力、许可、推测与义务，后接动词原形。",
+        "structure": "主语 + 情态动词 + 动词原形",
+        "explanation": "情态动词不随人称变化，也没有 to。表达推测时，must 表示「一定」，can't 表示「不可能」，may/might 表示「也许」。过去推测用 情态动词 + have + 过去分词。"
+      },
+      {
+        "entity_id": "g_article_definite",
+        "title": "冠词的使用",
+        "title_en": "Articles",
+        "category": "article",
+        "summary": "a/an 引入一个新的可数名词，the 指向双方已知的那一个。",
+        "structure": "a/an + 可数名词单数；the + 特指名词",
+        "explanation": "第一次提到用 a/an，再次提到用 the。独一无二的事物、序数词、最高级前用 the。表示泛指复数的可数名词与不可数名词前不加冠词。"
+      },
+      {
+        "entity_id": "g_infinitive",
+        "title": "动词不定式",
+        "title_en": "Infinitives",
+        "category": "sentence-structure",
+        "summary": "to + 动词原形，可在句中作主语、宾语、目的状语或补语。",
+        "structure": "to + 动词原形",
+        "explanation": "部分动词后只能接不定式（decide、hope、refuse、be reluctant to），部分只能接动名词（enjoy、avoid、finish）。表示目的时，不定式前不加 for。"
+      },
+      {
+        "entity_id": "g_prepositional_phrase",
+        "title": "介词短语",
+        "title_en": "Prepositional Phrases",
+        "category": "preposition",
+        "summary": "介词 + 名词/动名词，用来补充时间、地点、原因与方式。",
+        "structure": "介词 + 名词短语 / 动名词",
+        "explanation": "固定搭配需要整体记忆：in light of、on behalf of、regardless of、in terms of。介词后接动词时必须用动名词。"
+      },
+      {
+        "entity_id": "g_sentence_structure",
+        "title": "句子结构与连接",
+        "title_en": "Sentence Structure",
+        "category": "sentence-structure",
+        "summary": "避免逗号粘连与流水句，用连接词标明分句之间的逻辑关系。",
+        "structure": "主句 + 连接词 + 分句（或使用分号 / 关系从句）",
+        "explanation": "两个完整句子不能只用逗号连接。可用并列连词（and、but、so）、从属连词（because、although、while）或分号。学术写作中，逻辑连接词要和内容真实对应，不能滥用。"
+      }
+    ],
+    "grammar_examples": [
+      {
+        "id": "g_present_perfect_ex1",
+        "entity_id": "g_present_perfect",
+        "sort_order": 0,
+        "en": "I have reviewed this list three times.",
+        "zh": "这份清单我已经复习过三遍。",
+        "note": "强调经历"
+      },
+      {
+        "id": "g_present_perfect_ex2",
+        "entity_id": "g_present_perfect",
+        "sort_order": 1,
+        "en": "She has lived in Shanghai since 2019.",
+        "zh": "她自 2019 年起就住在上海。",
+        "note": "since + 时间点"
+      },
+      {
+        "id": "g_present_perfect_ex3",
+        "entity_id": "g_present_perfect",
+        "sort_order": 2,
+        "en": "The app has become much faster.",
+        "zh": "这个应用已经快了很多。",
+        "note": "强调结果"
+      },
+      {
+        "id": "g_past_simple_ex1",
+        "entity_id": "g_past_simple",
+        "sort_order": 0,
+        "en": "She contemplated the question for a while.",
+        "zh": "她思考了这个问题一会儿。",
+        "note": null
+      },
+      {
+        "id": "g_past_simple_ex2",
+        "entity_id": "g_past_simple",
+        "sort_order": 1,
+        "en": "We started using this method last month.",
+        "zh": "我们上个月开始使用这个方法。",
+        "note": null
+      },
+      {
+        "id": "g_relative_clause_ex1",
+        "entity_id": "g_relative_clause",
+        "sort_order": 0,
+        "en": "The book that changed my mind was quite short.",
+        "zh": "那本改变了我想法的书其实很薄。",
+        "note": "that 作主语"
+      },
+      {
+        "id": "g_relative_clause_ex2",
+        "entity_id": "g_relative_clause",
+        "sort_order": 1,
+        "en": "My tutor, who lives in Leeds, records every session.",
+        "zh": "我的导师住在利兹，他会录下每节课。",
+        "note": "非限定性，用 who"
+      },
+      {
+        "id": "g_passive_voice_ex1",
+        "entity_id": "g_passive_voice",
+        "sort_order": 0,
+        "en": "The proposal was rejected without public scrutiny.",
+        "zh": "该提案未经公众审查就被否决了。",
+        "note": null
+      },
+      {
+        "id": "g_passive_voice_ex2",
+        "entity_id": "g_passive_voice",
+        "sort_order": 1,
+        "en": "New words are added to the deck every morning.",
+        "zh": "每天早上都有新词被加入卡组。",
+        "note": null
+      },
+      {
+        "id": "g_comparative_ex1",
+        "entity_id": "g_comparative",
+        "sort_order": 0,
+        "en": "Reading aloud is more effective than reading silently.",
+        "zh": "朗读比默读更有效。",
+        "note": null
+      },
+      {
+        "id": "g_comparative_ex2",
+        "entity_id": "g_comparative",
+        "sort_order": 1,
+        "en": "This is the hardest chapter in the book.",
+        "zh": "这是全书最难的一章。",
+        "note": null
+      },
+      {
+        "id": "g_modal_verbs_ex1",
+        "entity_id": "g_modal_verbs",
+        "sort_order": 0,
+        "en": "Small changes can mitigate the damage.",
+        "zh": "小的改变可以减轻损害。",
+        "note": null
+      },
+      {
+        "id": "g_modal_verbs_ex2",
+        "entity_id": "g_modal_verbs",
+        "sort_order": 1,
+        "en": "She must have forgotten the deadline.",
+        "zh": "她一定是忘了截止日期。",
+        "note": null
+      },
+      {
+        "id": "g_article_definite_ex1",
+        "entity_id": "g_article_definite",
+        "sort_order": 0,
+        "en": "She wrote a paper on the effects of sleep.",
+        "zh": "她写了一篇关于睡眠影响的论文。",
+        "note": null
+      },
+      {
+        "id": "g_article_definite_ex2",
+        "entity_id": "g_article_definite",
+        "sort_order": 1,
+        "en": "The sun rose before we reached the station.",
+        "zh": "我们到车站前太阳就升起来了。",
+        "note": null
+      },
+      {
+        "id": "g_infinitive_ex1",
+        "entity_id": "g_infinitive",
+        "sort_order": 0,
+        "en": "He was reluctant to admit the mistake.",
+        "zh": "他不愿承认那个错误。",
+        "note": null
+      },
+      {
+        "id": "g_infinitive_ex2",
+        "entity_id": "g_infinitive",
+        "sort_order": 1,
+        "en": "We need time to sustain this routine.",
+        "zh": "我们需要时间来维持这个习惯。",
+        "note": null
+      },
+      {
+        "id": "g_prepositional_phrase_ex1",
+        "entity_id": "g_prepositional_phrase",
+        "sort_order": 0,
+        "en": "In light of the results, we changed the plan.",
+        "zh": "鉴于这些结果，我们改变了计划。",
+        "note": null
+      },
+      {
+        "id": "g_prepositional_phrase_ex2",
+        "entity_id": "g_prepositional_phrase",
+        "sort_order": 1,
+        "en": "Take your energy level into account before scheduling.",
+        "zh": "安排时间前，先把你的精力水平考虑进去。",
+        "note": null
+      },
+      {
+        "id": "g_sentence_structure_ex1",
+        "entity_id": "g_sentence_structure",
+        "sort_order": 0,
+        "en": "The data was incomplete; nevertheless, the trend was clear.",
+        "zh": "数据并不完整；尽管如此，趋势是清楚的。",
+        "note": null
+      },
+      {
+        "id": "g_sentence_structure_ex2",
+        "entity_id": "g_sentence_structure",
+        "sort_order": 1,
+        "en": "Although the task was short, it required full attention.",
+        "zh": "虽然任务很短，但需要全神贯注。",
+        "note": null
+      }
+    ],
+    "grammar_mistakes": [
+      {
+        "id": "g_present_perfect_m1",
+        "entity_id": "g_present_perfect",
+        "sort_order": 0,
+        "wrong": "I have seen him yesterday.",
+        "correct": "I saw him yesterday.",
+        "reason": "yesterday 是明确过去时间，需用一般过去时。"
+      },
+      {
+        "id": "g_present_perfect_m2",
+        "entity_id": "g_present_perfect",
+        "sort_order": 1,
+        "wrong": "He has went to the library.",
+        "correct": "He has gone to the library.",
+        "reason": "have/has 后必须接过去分词，go 的过去分词是 gone。"
+      },
+      {
+        "id": "g_past_simple_m1",
+        "entity_id": "g_past_simple",
+        "sort_order": 0,
+        "wrong": "Did you went there?",
+        "correct": "Did you go there?",
+        "reason": "did 已承担过去时标记，主要动词回到原形。"
+      },
+      {
+        "id": "g_relative_clause_m1",
+        "entity_id": "g_relative_clause",
+        "sort_order": 0,
+        "wrong": "The man which called you is my uncle.",
+        "correct": "The man who called you is my uncle.",
+        "reason": "指人时用 who（作宾语可用 whom/that），不用 which。"
+      },
+      {
+        "id": "g_relative_clause_m2",
+        "entity_id": "g_relative_clause",
+        "sort_order": 1,
+        "wrong": "Beijing, that is the capital, is cold in winter.",
+        "correct": "Beijing, which is the capital, is cold in winter.",
+        "reason": "非限定性定语从句不能用 that。"
+      },
+      {
+        "id": "g_passive_voice_m1",
+        "entity_id": "g_passive_voice",
+        "sort_order": 0,
+        "wrong": "The problem was happen last night.",
+        "correct": "The problem happened last night.",
+        "reason": "happen 是不及物动词，没有被动语态。"
+      },
+      {
+        "id": "g_comparative_m1",
+        "entity_id": "g_comparative",
+        "sort_order": 0,
+        "wrong": "This method is more better.",
+        "correct": "This method is better.",
+        "reason": "better 本身已是比较级，不能叠加 more。"
+      },
+      {
+        "id": "g_modal_verbs_m1",
+        "entity_id": "g_modal_verbs",
+        "sort_order": 0,
+        "wrong": "He cans swim very well.",
+        "correct": "He can swim very well.",
+        "reason": "情态动词没有人称和数的变化。"
+      },
+      {
+        "id": "g_article_definite_m1",
+        "entity_id": "g_article_definite",
+        "sort_order": 0,
+        "wrong": "He is best student in class.",
+        "correct": "He is the best student in the class.",
+        "reason": "最高级前需加 the；class 在此为特指。"
+      },
+      {
+        "id": "g_infinitive_m1",
+        "entity_id": "g_infinitive",
+        "sort_order": 0,
+        "wrong": "I look forward to see you.",
+        "correct": "I look forward to seeing you.",
+        "reason": "look forward to 中的 to 是介词，后接动名词。"
+      },
+      {
+        "id": "g_prepositional_phrase_m1",
+        "entity_id": "g_prepositional_phrase",
+        "sort_order": 0,
+        "wrong": "In light of improve the accuracy...",
+        "correct": "In light of improving the accuracy...",
+        "reason": "介词后接名词性成分，动词需变为动名词。"
+      },
+      {
+        "id": "g_sentence_structure_m1",
+        "entity_id": "g_sentence_structure",
+        "sort_order": 0,
+        "wrong": "The plan was good, it failed anyway.",
+        "correct": "The plan was good, but it failed anyway.",
+        "reason": "两个完整句之间需要连词或分号。"
+      }
+    ],
+    "sentences": [
+      {
+        "entity_id": "s_small_habits",
+        "en": "Small habits accumulate into visible progress, which is why consistency matters more than intensity.",
+        "zh": "微小的习惯会积累成可见的进步，这正是坚持比强度更重要的原因。",
+        "category": "opinion",
+        "chunks_json": "[\"Small habits accumulate\",\"into visible progress\",\"which is why consistency matters\",\"more than intensity\"]"
+      },
+      {
+        "entity_id": "s_meeting_shift",
+        "en": "In light of the new data, we have decided to move the meeting to Thursday afternoon.",
+        "zh": "鉴于新的数据，我们已决定把会议改到周四下午。",
+        "category": "workplace",
+        "chunks_json": "[\"In light of the new data\",\"we have decided\",\"to move the meeting\",\"to Thursday afternoon\"]"
+      },
+      {
+        "entity_id": "s_passive_study",
+        "en": "The study was designed to measure how quickly new vocabulary is forgotten without review.",
+        "zh": "这项研究旨在测量新词汇在没有复习的情况下被遗忘的速度。",
+        "category": "academic",
+        "chunks_json": "[\"The study was designed\",\"to measure how quickly\",\"new vocabulary is forgotten\",\"without review\"]"
+      },
+      {
+        "entity_id": "s_travel_checkin",
+        "en": "Could you tell me whether the train to the airport leaves from this platform?",
+        "zh": "你能告诉我开往机场的火车是不是从这个站台出发吗？",
+        "category": "travel",
+        "chunks_json": "[\"Could you tell me\",\"whether the train to the airport\",\"leaves from this platform\"]"
+      },
+      {
+        "entity_id": "s_coffee_small_talk",
+        "en": "I was going to grab a coffee before the session — do you want to join me?",
+        "zh": "我本来打算在上课前买杯咖啡——你要一起吗？",
+        "category": "daily",
+        "chunks_json": "[\"I was going to grab a coffee\",\"before the session\",\"do you want to join me\"]"
+      },
+      {
+        "entity_id": "s_argument_quality",
+        "en": "A coherent argument does not need complicated words; it needs evidence at every step.",
+        "zh": "一个连贯的论点不需要复杂的词，它需要在每一步都有证据。",
+        "category": "opinion",
+        "chunks_json": "[\"A coherent argument\",\"does not need complicated words\",\"it needs evidence\",\"at every step\"]"
+      },
+      {
+        "entity_id": "s_mitigate_risk",
+        "en": "The team must mitigate the risk before the release, or the incident will repeat itself.",
+        "zh": "团队必须在发布前降低风险，否则事故会再次发生。",
+        "category": "workplace",
+        "chunks_json": "[\"The team must mitigate the risk\",\"before the release\",\"or the incident will repeat itself\"]"
+      },
+      {
+        "entity_id": "s_profound_effect",
+        "en": "Reading fiction has a profound effect on how we understand other people.",
+        "zh": "阅读小说深刻地影响我们理解他人的方式。",
+        "category": "academic",
+        "chunks_json": "[\"Reading fiction\",\"has a profound effect\",\"on how we understand other people\"]"
+      }
+    ],
+    "knowledge_relations": [
+      {
+        "source_id": "w_ubiquitous",
+        "target_id": "g_present_perfect",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_ubiquitous",
+        "target_id": "w_inevitable",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_resilient",
+        "target_id": "g_comparative",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_resilient",
+        "target_id": "w_fragile",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_resilient",
+        "target_id": "w_sustain",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_mitigate",
+        "target_id": "g_modal_verbs",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_mitigate",
+        "target_id": "w_sustain",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_ambiguous",
+        "target_id": "g_relative_clause",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_ambiguous",
+        "target_id": "w_coherent",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_ambiguous",
+        "target_id": "w_scrutiny",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_deliberate",
+        "target_id": "g_past_simple",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_deliberate",
+        "target_id": "w_contemplate",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_deliberate",
+        "target_id": "w_diligent",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_scrutiny",
+        "target_id": "g_passive_voice",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_scrutiny",
+        "target_id": "w_perceive",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_coherent",
+        "target_id": "g_sentence_structure",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_coherent",
+        "target_id": "w_profound",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_accumulate",
+        "target_id": "g_present_perfect",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_accumulate",
+        "target_id": "w_sustain",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_accumulate",
+        "target_id": "w_diligent",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_reluctant",
+        "target_id": "g_infinitive",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_reluctant",
+        "target_id": "w_deliberate",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_contemplate",
+        "target_id": "g_past_simple",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_contemplate",
+        "target_id": "w_profound",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_sustain",
+        "target_id": "g_infinitive",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_inevitable",
+        "target_id": "g_passive_voice",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_perceive",
+        "target_id": "g_relative_clause",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_perceive",
+        "target_id": "w_coherent",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_fragile",
+        "target_id": "g_comparative",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_diligent",
+        "target_id": "g_comparative",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_profound",
+        "target_id": "g_article_definite",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_take_into_account",
+        "target_id": "g_prepositional_phrase",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_take_into_account",
+        "target_id": "w_deliberate",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "w_in_light_of",
+        "target_id": "g_prepositional_phrase",
+        "relation": "explains",
+        "weight": 0.8
+      },
+      {
+        "source_id": "w_in_light_of",
+        "target_id": "w_take_into_account",
+        "relation": "related",
+        "weight": 1
+      },
+      {
+        "source_id": "s_small_habits",
+        "target_id": "g_relative_clause",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_small_habits",
+        "target_id": "g_comparative",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_small_habits",
+        "target_id": "w_accumulate",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_small_habits",
+        "target_id": "w_diligent",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_meeting_shift",
+        "target_id": "g_present_perfect",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_meeting_shift",
+        "target_id": "g_prepositional_phrase",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_meeting_shift",
+        "target_id": "w_in_light_of",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_passive_study",
+        "target_id": "g_passive_voice",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_passive_study",
+        "target_id": "g_relative_clause",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_passive_study",
+        "target_id": "w_perceive",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_passive_study",
+        "target_id": "w_scrutiny",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_travel_checkin",
+        "target_id": "g_relative_clause",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_travel_checkin",
+        "target_id": "g_modal_verbs",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_coffee_small_talk",
+        "target_id": "g_past_simple",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_coffee_small_talk",
+        "target_id": "g_infinitive",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_argument_quality",
+        "target_id": "g_sentence_structure",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_argument_quality",
+        "target_id": "g_article_definite",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_argument_quality",
+        "target_id": "w_coherent",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_mitigate_risk",
+        "target_id": "g_modal_verbs",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_mitigate_risk",
+        "target_id": "g_sentence_structure",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_mitigate_risk",
+        "target_id": "w_mitigate",
+        "relation": "used-in",
+        "weight": 1
+      },
+      {
+        "source_id": "s_profound_effect",
+        "target_id": "g_present_perfect",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_profound_effect",
+        "target_id": "g_article_definite",
+        "relation": "used-in",
+        "weight": 1.1
+      },
+      {
+        "source_id": "s_profound_effect",
+        "target_id": "w_profound",
+        "relation": "used-in",
+        "weight": 1
+      }
+    ],
+    "training_options": [
+      {
+        "id": "to_match",
+        "track": "vocabulary",
+        "kind": "word-match",
+        "title": "单词连线",
+        "description": "把英文与中文释义快速配对，训练反应速度。",
+        "icon": "link",
+        "minutes": 3,
+        "item_count": 5,
+        "difficulty": 3,
+        "sort_order": 0
+      },
+      {
+        "id": "to_choice",
+        "track": "vocabulary",
+        "kind": "multiple-choice",
+        "title": "词义选择",
+        "description": "在真实语境中选出最准确的词。",
+        "icon": "list-checks",
+        "minutes": 4,
+        "item_count": 4,
+        "difficulty": 4,
+        "sort_order": 1
+      },
+      {
+        "id": "to_spell",
+        "track": "vocabulary",
+        "kind": "spelling",
+        "title": "单词拼写",
+        "description": "根据中文释义拼出完整单词。",
+        "icon": "keyboard",
+        "minutes": 3,
+        "item_count": 3,
+        "difficulty": 5,
+        "sort_order": 2
+      },
+      {
+        "id": "to_dict",
+        "track": "vocabulary",
+        "kind": "dictation",
+        "title": "单词听写",
+        "description": "听发音写出单词，检验音形对应。",
+        "icon": "headphones",
+        "minutes": 3,
+        "item_count": 3,
+        "difficulty": 4,
+        "sort_order": 3
+      },
+      {
+        "id": "to_cloze",
+        "track": "vocabulary",
+        "kind": "cloze",
+        "title": "句子填空",
+        "description": "在语境中填入正确形式，连接词与语法。",
+        "icon": "text-cursor-input",
+        "minutes": 4,
+        "item_count": 3,
+        "difficulty": 4,
+        "sort_order": 4
+      },
+      {
+        "id": "to_trans",
+        "track": "vocabulary",
+        "kind": "translate",
+        "title": "中英互译",
+        "description": "用上目标表达，完成中译英。",
+        "icon": "languages",
+        "minutes": 5,
+        "item_count": 3,
+        "difficulty": 3,
+        "sort_order": 5
+      },
+      {
+        "id": "to_grammar_choice",
+        "track": "grammar",
+        "kind": "multiple-choice",
+        "title": "语法选择",
+        "description": "针对时态、从句、介词的定向选择。",
+        "icon": "check-square",
+        "minutes": 4,
+        "item_count": 4,
+        "difficulty": 3,
+        "sort_order": 6
+      },
+      {
+        "id": "to_order",
+        "track": "grammar",
+        "kind": "sentence-order",
+        "title": "句子排序",
+        "description": "把词块排成符合语法与逻辑的句子。",
+        "icon": "arrow-down-up",
+        "minutes": 4,
+        "item_count": 3,
+        "difficulty": 4,
+        "sort_order": 7
+      },
+      {
+        "id": "to_correct",
+        "track": "grammar",
+        "kind": "error-correction",
+        "title": "语法纠错",
+        "description": "找出并改正句子里的错误。",
+        "icon": "spell-check",
+        "minutes": 5,
+        "item_count": 4,
+        "difficulty": 4,
+        "sort_order": 8
+      },
+      {
+        "id": "to_rewrite",
+        "track": "grammar",
+        "kind": "rewrite",
+        "title": "句子改写",
+        "description": "按指令改写句子，检验结构掌握。",
+        "icon": "replace",
+        "minutes": 5,
+        "item_count": 2,
+        "difficulty": 5,
+        "sort_order": 9
+      },
+      {
+        "id": "to_shadow",
+        "track": "speaking",
+        "kind": "shadowing",
+        "title": "跟读训练",
+        "description": "按意群跟读，建立语速与节奏感。",
+        "icon": "mic",
+        "minutes": 4,
+        "item_count": 3,
+        "difficulty": 3,
+        "sort_order": 10
+      },
+      {
+        "id": "to_roleplay",
+        "track": "speaking",
+        "kind": "roleplay",
+        "title": "情景对话",
+        "description": "在具体场景中组织完整的回应。",
+        "icon": "messages-square",
+        "minutes": 6,
+        "item_count": 2,
+        "difficulty": 3,
+        "sort_order": 11
+      }
+    ],
+    "exercises": [
+      {
+        "id": "ex_match_1",
+        "kind": "word-match",
+        "difficulty": 3,
+        "xp": 28,
+        "instruction": "把英文单词和对应的中文释义连起来",
+        "context": "5 组，限时 90 秒",
+        "explanation": "这组词的共同点是：都用于描述「程度或清晰度」，是学术写作的高频替换词。",
+        "tags_json": "[\"同义辨析\",\"学术词汇\"]",
+        "payload_json": "{\"pairs\":[{\"id\":\"p1\",\"left\":\"mitigate\",\"right\":\"减轻；缓和\"},{\"id\":\"p2\",\"left\":\"resilient\",\"right\":\"有韧性的\"},{\"id\":\"p3\",\"left\":\"ambiguous\",\"right\":\"模棱两可的\"},{\"id\":\"p4\",\"left\":\"scrutiny\",\"right\":\"仔细审查\"},{\"id\":\"p5\",\"left\":\"coherent\",\"right\":\"连贯的\"}]}"
+      },
+      {
+        "id": "ex_choice_1",
+        "kind": "multiple-choice",
+        "difficulty": 4,
+        "xp": 12,
+        "instruction": "选择最符合语境的词",
+        "context": "The new policy aims to ______ the impact of rising costs on students.",
+        "explanation": "mitigate 强调「让不良影响变小」，对象通常是风险、损害、冲击。alleviate 更偏疼痛与情绪。",
+        "tags_json": "[\"词义辨析\"]",
+        "payload_json": "{\"stem\":\"The new policy aims to ______ the impact of rising costs on students.\",\"options\":[{\"id\":\"o1\",\"label\":\"mitigate\",\"correct\":true},{\"id\":\"o2\",\"label\":\"accumulate\",\"correct\":false},{\"id\":\"o3\",\"label\":\"contemplate\",\"correct\":false},{\"id\":\"o4\",\"label\":\"perceive\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_choice_2",
+        "kind": "multiple-choice",
+        "difficulty": 5,
+        "xp": 12,
+        "instruction": "选择与释义匹配的单词",
+        "context": "open to more than one interpretation",
+        "explanation": "ambiguous 表示「可以有两种以上解释」，与 clear / unambiguous 相对。",
+        "tags_json": "[\"词义辨析\"]",
+        "payload_json": "{\"stem\":\"open to more than one interpretation\",\"options\":[{\"id\":\"o1\",\"label\":\"coherent\",\"correct\":false},{\"id\":\"o2\",\"label\":\"ambiguous\",\"correct\":true},{\"id\":\"o3\",\"label\":\"inevitable\",\"correct\":false},{\"id\":\"o4\",\"label\":\"diligent\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_choice_3",
+        "kind": "multiple-choice",
+        "difficulty": 3,
+        "xp": 10,
+        "instruction": "选择填入空格的正确形式",
+        "context": "She was ______ to admit that the plan had failed.",
+        "explanation": "be reluctant to do 表示「不愿意做」，比 unwilling 语气弱一些。",
+        "tags_json": "[\"搭配\"]",
+        "payload_json": "{\"stem\":\"She was ______ to admit that the plan had failed.\",\"options\":[{\"id\":\"o1\",\"label\":\"reluctant\",\"correct\":true},{\"id\":\"o2\",\"label\":\"reluctance\",\"correct\":false},{\"id\":\"o3\",\"label\":\"reluctantly\",\"correct\":false},{\"id\":\"o4\",\"label\":\"relucting\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_choice_4",
+        "kind": "multiple-choice",
+        "difficulty": 4,
+        "xp": 12,
+        "instruction": "选择最自然的连接表达",
+        "context": "______ the latest research, the team revised its assumptions.",
+        "explanation": "in light of = considering，用于引出判断依据，后接名词性成分。",
+        "tags_json": "[\"连接表达\"]",
+        "payload_json": "{\"stem\":\"______ the latest research, the team revised its assumptions.\",\"options\":[{\"id\":\"o1\",\"label\":\"In light of\",\"correct\":true},{\"id\":\"o2\",\"label\":\"In case of\",\"correct\":false},{\"id\":\"o3\",\"label\":\"In spite\",\"correct\":false},{\"id\":\"o4\",\"label\":\"In charge of\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_spell_1",
+        "kind": "spelling",
+        "difficulty": 5,
+        "xp": 14,
+        "instruction": "根据释义拼写单词",
+        "context": null,
+        "explanation": "注意中间是 -igu-，与 ambition 同源。",
+        "tags_json": "[\"拼写\"]",
+        "payload_json": "{\"definition\":\"模棱两可的；含糊不清的\",\"answer\":\"ambiguous\",\"hint\":\"a _ _ i g _ _ _ s（9 个字母）\"}"
+      },
+      {
+        "id": "ex_spell_2",
+        "kind": "spelling",
+        "difficulty": 4,
+        "xp": 14,
+        "instruction": "根据释义拼写单词",
+        "context": null,
+        "explanation": "resilient = re + silire（跳回），重音在第二音节。",
+        "tags_json": "[\"拼写\"]",
+        "payload_json": "{\"definition\":\"有韧性的；能迅速恢复的\",\"answer\":\"resilient\",\"hint\":\"r e s _ l _ e n t\"}"
+      },
+      {
+        "id": "ex_spell_3",
+        "kind": "spelling",
+        "difficulty": 5,
+        "xp": 16,
+        "instruction": "根据释义拼写单词",
+        "context": null,
+        "explanation": "scrutiny 的形容词是 scrutinous，动词是 scrutinize。",
+        "tags_json": "[\"拼写\",\"派生词\"]",
+        "payload_json": "{\"definition\":\"仔细审查；细看\",\"answer\":\"scrutiny\",\"hint\":\"s c r _ t _ n y\"}"
+      },
+      {
+        "id": "ex_dict_1",
+        "kind": "dictation",
+        "difficulty": 3,
+        "xp": 15,
+        "instruction": "听写你听到的单词",
+        "context": null,
+        "explanation": "accumulate 的重音在第二音节 /əˈkjuː/。",
+        "tags_json": "[\"听写\"]",
+        "payload_json": "{\"audioText\":\"accumulate\",\"answer\":\"accumulate\",\"hint\":\"以 ac- 开头，-ulate 结尾\"}"
+      },
+      {
+        "id": "ex_dict_2",
+        "kind": "dictation",
+        "difficulty": 4,
+        "xp": 18,
+        "instruction": "听写你听到的单词",
+        "context": null,
+        "explanation": "注意 /kw/ 的拼写是 qu，不是 cw。",
+        "tags_json": "[\"听写\"]",
+        "payload_json": "{\"audioText\":\"ubiquitous\",\"answer\":\"ubiquitous\",\"hint\":\"u b i _ u i t o u s\"}"
+      },
+      {
+        "id": "ex_dict_3",
+        "kind": "dictation",
+        "difficulty": 3,
+        "xp": 15,
+        "instruction": "听写你听到的单词",
+        "context": null,
+        "explanation": "sustain 与 maintain、retain 同族，注意 ai 的拼写。",
+        "tags_json": "[\"听写\"]",
+        "payload_json": "{\"audioText\":\"sustain\",\"answer\":\"sustain\",\"hint\":\"s u s _ a i n\"}"
+      },
+      {
+        "id": "ex_cloze_1",
+        "kind": "cloze",
+        "difficulty": 3,
+        "xp": 14,
+        "instruction": "选出最合适的选项补全句子",
+        "context": null,
+        "explanation": "since 2021 引出持续到现在的状态，用现在完成时。",
+        "tags_json": "[\"时态\",\"填空\"]",
+        "payload_json": "{\"sentence\":\"Since 2021, she {{blank}} over four thousand words on this app.\",\"options\":[{\"id\":\"o1\",\"label\":\"has accumulated\",\"correct\":true},{\"id\":\"o2\",\"label\":\"accumulated\",\"correct\":false},{\"id\":\"o3\",\"label\":\"accumulates\",\"correct\":false},{\"id\":\"o4\",\"label\":\"is accumulating\",\"correct\":false}],\"answer\":\"has accumulated\"}"
+      },
+      {
+        "id": "ex_cloze_2",
+        "kind": "cloze",
+        "difficulty": 4,
+        "xp": 16,
+        "instruction": "选出最合适的选项补全句子",
+        "context": null,
+        "explanation": "介词后必须接名词性成分，improving 为动名词。",
+        "tags_json": "[\"介词\",\"填空\"]",
+        "payload_json": "{\"sentence\":\"In light of {{blank}} the accuracy, we redesigned the review queue.\",\"options\":[{\"id\":\"o1\",\"label\":\"improve\",\"correct\":false},{\"id\":\"o2\",\"label\":\"improving\",\"correct\":true},{\"id\":\"o3\",\"label\":\"improved\",\"correct\":false},{\"id\":\"o4\",\"label\":\"to improve\",\"correct\":false}],\"answer\":\"improving\"}"
+      },
+      {
+        "id": "ex_cloze_3",
+        "kind": "cloze",
+        "difficulty": 4,
+        "xp": 16,
+        "instruction": "选出最合适的选项补全句子",
+        "context": null,
+        "explanation": "先行词是物，且从句缺主语，用 which 或 that。",
+        "tags_json": "[\"从句\",\"填空\"]",
+        "payload_json": "{\"sentence\":\"The habit {{blank}} changed my reading speed was surprisingly small.\",\"options\":[{\"id\":\"o1\",\"label\":\"who\",\"correct\":false},{\"id\":\"o2\",\"label\":\"which\",\"correct\":true},{\"id\":\"o3\",\"label\":\"whose\",\"correct\":false},{\"id\":\"o4\",\"label\":\"where\",\"correct\":false}],\"answer\":\"which\"}"
+      },
+      {
+        "id": "ex_trans_1",
+        "kind": "translate",
+        "difficulty": 3,
+        "xp": 20,
+        "instruction": "把下面的中文翻译成英文",
+        "context": "用上 take into account",
+        "explanation": "take ... into account 是固定搭配，也可用 take ... into consideration。",
+        "tags_json": "[\"中译英\",\"搭配\"]",
+        "payload_json": "{\"source\":\"这份计划把你的时间安排考虑在内了。\",\"sourceLang\":\"zh\",\"targetLang\":\"en\",\"answer\":\"The plan takes your schedule into account.\",\"references\":[\"This plan takes your schedule into account.\",\"The plan takes your schedule into consideration.\"]}"
+      },
+      {
+        "id": "ex_trans_2",
+        "kind": "translate",
+        "difficulty": 4,
+        "xp": 22,
+        "instruction": "把下面的中文翻译成英文",
+        "context": null,
+        "explanation": "「必须」用 must，「减轻」用 mitigate，注意后接名词宾语。",
+        "tags_json": "[\"中译英\"]",
+        "payload_json": "{\"source\":\"团队必须在发布前降低风险。\",\"sourceLang\":\"zh\",\"targetLang\":\"en\",\"answer\":\"The team must mitigate the risk before the release.\",\"references\":[\"The team has to mitigate the risk before release.\"]}"
+      },
+      {
+        "id": "ex_trans_3",
+        "kind": "translate",
+        "difficulty": 3,
+        "xp": 20,
+        "instruction": "把下面的中文翻译成英文",
+        "context": null,
+        "explanation": "「积累成」可用 accumulate into。",
+        "tags_json": "[\"中译英\"]",
+        "payload_json": "{\"source\":\"微小的习惯会积累成可见的进步。\",\"sourceLang\":\"zh\",\"targetLang\":\"en\",\"answer\":\"Small habits accumulate into visible progress.\",\"references\":[\"Little habits accumulate into visible progress.\"]}"
+      },
+      {
+        "id": "ex_order_1",
+        "kind": "sentence-order",
+        "difficulty": 4,
+        "xp": 22,
+        "instruction": "把词块排成一句通顺的话",
+        "context": null,
+        "explanation": "定语从句紧跟先行词，which is why 引出结果分句。",
+        "tags_json": "[\"句子结构\",\"从句\"]",
+        "payload_json": "{\"tokens\":[\"which is why\",\"Small habits\",\"consistency\",\"accumulate into progress,\",\"matters more\"],\"answer\":[\"Small habits\",\"accumulate into progress,\",\"which is why\",\"consistency\",\"matters more\"]}"
+      },
+      {
+        "id": "ex_order_2",
+        "kind": "sentence-order",
+        "difficulty": 3,
+        "xp": 20,
+        "instruction": "把词块排成一句通顺的话",
+        "context": null,
+        "explanation": "In light of ... 作状语前置，主句用现在完成时。",
+        "tags_json": "[\"句子结构\"]",
+        "payload_json": "{\"tokens\":[\"we have decided\",\"In light of the new data,\",\"on Thursday\",\"to hold the meeting\"],\"answer\":[\"In light of the new data,\",\"we have decided\",\"to hold the meeting\",\"on Thursday\"]}"
+      },
+      {
+        "id": "ex_order_3",
+        "kind": "sentence-order",
+        "difficulty": 4,
+        "xp": 22,
+        "instruction": "把词块排成一句通顺的话",
+        "context": null,
+        "explanation": "被动语态 was designed to ... 后接目的不定式。",
+        "tags_json": "[\"句子结构\",\"语态\"]",
+        "payload_json": "{\"tokens\":[\"how quickly new words\",\"The study\",\"are forgotten\",\"was designed to measure\"],\"answer\":[\"The study\",\"was designed to measure\",\"how quickly new words\",\"are forgotten\"]}"
+      },
+      {
+        "id": "ex_corr_1",
+        "kind": "error-correction",
+        "difficulty": 4,
+        "xp": 24,
+        "instruction": "改正句子中的一处语法错误",
+        "context": "只改必要的地方",
+        "explanation": "指人的先行词用 who，不能用 which。",
+        "tags_json": "[\"纠错\",\"从句\"]",
+        "payload_json": "{\"wrong\":\"The man which called you is my uncle.\",\"answer\":\"The man who called you is my uncle.\",\"errorTag\":\"关系词选择\"}"
+      },
+      {
+        "id": "ex_corr_2",
+        "kind": "error-correction",
+        "difficulty": 3,
+        "xp": 20,
+        "instruction": "改正句子中的一处语法错误",
+        "context": null,
+        "explanation": "better 已经是比较级，不能再加 more。",
+        "tags_json": "[\"纠错\",\"比较级\"]",
+        "payload_json": "{\"wrong\":\"This method is more better than the old one.\",\"answer\":\"This method is better than the old one.\",\"errorTag\":\"双重比较\"}"
+      },
+      {
+        "id": "ex_corr_3",
+        "kind": "error-correction",
+        "difficulty": 4,
+        "xp": 24,
+        "instruction": "改正句子中的一处语法错误",
+        "context": null,
+        "explanation": "happen 是不及物动词，没有被动形式。",
+        "tags_json": "[\"纠错\",\"语态\"]",
+        "payload_json": "{\"wrong\":\"The problem was happened last night.\",\"answer\":\"The problem happened last night.\",\"errorTag\":\"不及物动词被动化\"}"
+      },
+      {
+        "id": "ex_corr_4",
+        "kind": "error-correction",
+        "difficulty": 4,
+        "xp": 24,
+        "instruction": "改正句子中的一处语法错误",
+        "context": null,
+        "explanation": "两个完整句之间需要连词或分号，不能只用逗号。",
+        "tags_json": "[\"纠错\",\"句子结构\"]",
+        "payload_json": "{\"wrong\":\"The plan was good, it failed anyway.\",\"answer\":\"The plan was good, but it failed anyway.\",\"errorTag\":\"逗号粘连\"}"
+      },
+      {
+        "id": "ex_rewrite_1",
+        "kind": "rewrite",
+        "difficulty": 4,
+        "xp": 26,
+        "instruction": "把句子改写为被动语态",
+        "context": "保持原意不变",
+        "explanation": "把主动句改为被动句时，宾语提前，动词变 be + 过去分词。",
+        "tags_json": "[\"改写\",\"语态\"]",
+        "payload_json": "{\"source\":\"The committee rejected the proposal without public scrutiny.\",\"instruction\":\"改为被动语态\",\"answer\":\"The proposal was rejected without public scrutiny.\",\"references\":[\"The proposal was rejected by the committee without public scrutiny.\"]}"
+      },
+      {
+        "id": "ex_rewrite_2",
+        "kind": "rewrite",
+        "difficulty": 5,
+        "xp": 28,
+        "instruction": "用定语从句合并两个句子",
+        "context": "用 which 指代整句",
+        "explanation": "把两个简单句合并为非限定性定语从句，用逗号 + which。",
+        "tags_json": "[\"改写\",\"从句\"]",
+        "payload_json": "{\"source\":\"Reading aloud improves retention. This surprised the researchers.\",\"instruction\":\"合并为一句定语从句\",\"answer\":\"Reading aloud improves retention, which surprised the researchers.\",\"references\":[\"Reading aloud improves retention, which was surprising to the researchers.\"]}"
+      },
+      {
+        "id": "ex_shadow_1",
+        "kind": "shadowing",
+        "difficulty": 3,
+        "xp": 30,
+        "instruction": "跟着示范朗读这句话",
+        "context": "先慢速，再按正常语速",
+        "explanation": "注意 was going to 的弱读，以及 before 与 the 的连读。",
+        "tags_json": "[\"跟读\",\"连读\"]",
+        "payload_json": "{\"text\":\"I was going to grab a coffee before the session.\",\"translation\":\"我本来打算在上课前买杯咖啡。\",\"chunks\":[\"I was going to\",\"grab a coffee\",\"before the session\"],\"targetSeconds\":4}"
+      },
+      {
+        "id": "ex_shadow_2",
+        "kind": "shadowing",
+        "difficulty": 4,
+        "xp": 34,
+        "instruction": "跟着示范朗读这句话",
+        "context": "注意从句重音",
+        "explanation": "must 重读，before the release 整块连读，不要逐词停顿。",
+        "tags_json": "[\"跟读\",\"节奏\"]",
+        "payload_json": "{\"text\":\"The team must mitigate the risk before the release.\",\"translation\":\"团队必须在发布前降低风险。\",\"chunks\":[\"The team must\",\"mitigate the risk\",\"before the release\"],\"targetSeconds\":4}"
+      },
+      {
+        "id": "ex_shadow_3",
+        "kind": "shadowing",
+        "difficulty": 4,
+        "xp": 36,
+        "instruction": "跟着示范朗读这句话",
+        "context": "按意群停顿",
+        "explanation": "长句要按意群停顿，which is why 前换气。",
+        "tags_json": "[\"跟读\",\"长句\"]",
+        "payload_json": "{\"text\":\"Small habits accumulate into visible progress, which is why consistency matters more than intensity.\",\"translation\":\"微小的习惯会积累成可见的进步，这正是坚持比强度更重要的原因。\",\"chunks\":[\"Small habits accumulate\",\"into visible progress,\",\"which is why consistency\",\"matters more than intensity\"],\"targetSeconds\":8}"
+      },
+      {
+        "id": "ex_role_1",
+        "kind": "roleplay",
+        "difficulty": 3,
+        "xp": 40,
+        "instruction": "根据情景回应对方的每一句话",
+        "context": "你在和同事确认会议改期",
+        "explanation": "改期会议时，先给出理由，再提出替代方案，最后确认。",
+        "tags_json": "[\"情景对话\",\"职场\"]",
+        "payload_json": "{\"scenario\":\"同事通知你会议需要改到周四下午，你需要确认时间并说明你的安排。\",\"turns\":[{\"id\":\"t1\",\"speaker\":\"ai\",\"en\":\"Hi, quick heads-up — we may need to move Thursday's meeting.\",\"zh\":\"嗨，先说一句，周四的会议可能要改时间。\"},{\"id\":\"t2\",\"speaker\":\"user\",\"en\":\"\",\"zh\":\"回应：询问改到几点，并说明你下午三点前有空。\",\"expected\":[\"What time\",\"I'm free before three\",\"afternoon\"]},{\"id\":\"t3\",\"speaker\":\"ai\",\"en\":\"How about two thirty? We only need twenty minutes.\",\"zh\":\"两点半怎么样？我们只需要二十分钟。\"},{\"id\":\"t4\",\"speaker\":\"user\",\"en\":\"\",\"zh\":\"回应：确认时间，并提出会前把材料发给大家。\",\"expected\":[\"Two thirty works\",\"send the materials\",\"before the meeting\"]}]}"
+      },
+      {
+        "id": "ex_role_2",
+        "kind": "roleplay",
+        "difficulty": 2,
+        "xp": 34,
+        "instruction": "根据情景回应对方的每一句话",
+        "context": "你在车站询问去机场的列车",
+        "explanation": "问路时用 Could you tell me whether ... 比直接问更礼貌。",
+        "tags_json": "[\"情景对话\",\"旅行\"]",
+        "payload_json": "{\"scenario\":\"你在车站找去机场的列车，需要确认站台和发车时间。\",\"turns\":[{\"id\":\"t1\",\"speaker\":\"ai\",\"en\":\"Good morning, how can I help you?\",\"zh\":\"早上好，有什么可以帮您？\"},{\"id\":\"t2\",\"speaker\":\"user\",\"en\":\"\",\"zh\":\"回应：询问去机场的列车是否从这个站台出发。\",\"expected\":[\"Could you tell me\",\"airport\",\"platform\"]},{\"id\":\"t3\",\"speaker\":\"ai\",\"en\":\"Yes, platform four. It leaves in about ten minutes.\",\"zh\":\"是的，四号站台。大约十分钟后发车。\"},{\"id\":\"t4\",\"speaker\":\"user\",\"en\":\"\",\"zh\":\"回应：道谢，并确认这趟车是否直达。\",\"expected\":[\"Thank you\",\"direct\",\"airport\"]}]}"
+      },
+      {
+        "id": "ex_pos_1",
+        "kind": "multiple-choice",
+        "difficulty": 2,
+        "xp": 8,
+        "instruction": "判断斜体词的词性",
+        "context": "the *rapid* growth of online learning",
+        "explanation": "rapid 修饰名词 growth，作定语，因此是形容词。",
+        "tags_json": "[\"词性判断\"]",
+        "payload_json": "{\"stem\":\"the ___ growth of online learning（rapid 的词性）\",\"options\":[{\"id\":\"o1\",\"label\":\"形容词\",\"correct\":true},{\"id\":\"o2\",\"label\":\"副词\",\"correct\":false},{\"id\":\"o3\",\"label\":\"名词\",\"correct\":false},{\"id\":\"o4\",\"label\":\"动词\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_pos_2",
+        "kind": "multiple-choice",
+        "difficulty": 3,
+        "xp": 8,
+        "instruction": "判断斜体词的词性",
+        "context": "The plan survived public *scrutiny*.",
+        "explanation": "scrutiny 由形容词 scrutinous 派生，本身是不可数名词。",
+        "tags_json": "[\"词性判断\"]",
+        "payload_json": "{\"stem\":\"survived public ___（scrutiny 的词性）\",\"options\":[{\"id\":\"o1\",\"label\":\"名词\",\"correct\":true},{\"id\":\"o2\",\"label\":\"动词\",\"correct\":false},{\"id\":\"o3\",\"label\":\"形容词\",\"correct\":false},{\"id\":\"o4\",\"label\":\"副词\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_ctx_1",
+        "kind": "multiple-choice",
+        "difficulty": 3,
+        "xp": 10,
+        "instruction": "这句话最可能出现在什么场景？",
+        "context": "We took your schedule into account when planning the sessions.",
+        "explanation": "take into account 最常出现在决策、规划类语境中。",
+        "tags_json": "[\"使用场景\"]",
+        "payload_json": "{\"stem\":\"We took your schedule into account when planning the sessions.\",\"options\":[{\"id\":\"o1\",\"label\":\"工作安排与协商\",\"correct\":true},{\"id\":\"o2\",\"label\":\"餐厅点单\",\"correct\":false},{\"id\":\"o3\",\"label\":\"体育解说\",\"correct\":false},{\"id\":\"o4\",\"label\":\"诗歌朗诵\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_ctx_2",
+        "kind": "multiple-choice",
+        "difficulty": 4,
+        "xp": 10,
+        "instruction": "哪句话使用 ubiquitous 最自然？",
+        "context": null,
+        "explanation": "ubiquitous 常用于描述技术、现象在社会中的普及，语域偏学术与媒体。",
+        "tags_json": "[\"使用场景\"]",
+        "payload_json": "{\"stem\":\"选择最自然的用法\",\"options\":[{\"id\":\"o1\",\"label\":\"Smartphones are now ubiquitous in urban life.\",\"correct\":true},{\"id\":\"o2\",\"label\":\"My coffee is ubiquitous this morning.\",\"correct\":false},{\"id\":\"o3\",\"label\":\"He ubiquitous walked to school.\",\"correct\":false},{\"id\":\"o4\",\"label\":\"The ubiquitous of the room was small.\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_tense_1",
+        "kind": "multiple-choice",
+        "difficulty": 3,
+        "xp": 10,
+        "instruction": "选择正确的时态",
+        "context": "She ____ English for three years.",
+        "explanation": "for three years 表示持续到现在，需要用现在完成进行或现在完成时。",
+        "tags_json": "[\"时态判断\"]",
+        "payload_json": "{\"stem\":\"She ____ English for three years.\",\"options\":[{\"id\":\"o1\",\"label\":\"has been learning\",\"correct\":true},{\"id\":\"o2\",\"label\":\"learned\",\"correct\":false},{\"id\":\"o3\",\"label\":\"learns\",\"correct\":false},{\"id\":\"o4\",\"label\":\"is learning\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_prep_1",
+        "kind": "multiple-choice",
+        "difficulty": 2,
+        "xp": 8,
+        "instruction": "选择正确的冠词",
+        "context": "____ sun rose before we reached the station.",
+        "explanation": "独一无二的天体前用 the。",
+        "tags_json": "[\"冠词\"]",
+        "payload_json": "{\"stem\":\"____ sun rose before we reached the station.\",\"options\":[{\"id\":\"o1\",\"label\":\"The\",\"correct\":true},{\"id\":\"o2\",\"label\":\"A\",\"correct\":false},{\"id\":\"o3\",\"label\":\"An\",\"correct\":false},{\"id\":\"o4\",\"label\":\"不填\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_prep_2",
+        "kind": "multiple-choice",
+        "difficulty": 3,
+        "xp": 10,
+        "instruction": "选择正确的介词",
+        "context": "Success depends ____ consistent review.",
+        "explanation": "depend on 是固定搭配，不能换成 depend of。",
+        "tags_json": "[\"介词\"]",
+        "payload_json": "{\"stem\":\"Success depends ____ consistent review.\",\"options\":[{\"id\":\"o1\",\"label\":\"on\",\"correct\":true},{\"id\":\"o2\",\"label\":\"of\",\"correct\":false},{\"id\":\"o3\",\"label\":\"to\",\"correct\":false},{\"id\":\"o4\",\"label\":\"for\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_clause_1",
+        "kind": "multiple-choice",
+        "difficulty": 4,
+        "xp": 12,
+        "instruction": "指出划线部分是哪种从句",
+        "context": "The book **that changed my mind** was quite short.",
+        "explanation": "句中含有两个谓语（was、changed），that 引导定语从句修饰 the book。",
+        "tags_json": "[\"从句识别\"]",
+        "payload_json": "{\"stem\":\"The book that changed my mind was quite short.\",\"options\":[{\"id\":\"o1\",\"label\":\"定语从句\",\"correct\":true},{\"id\":\"o2\",\"label\":\"宾语从句\",\"correct\":false},{\"id\":\"o3\",\"label\":\"状语从句\",\"correct\":false},{\"id\":\"o4\",\"label\":\"主语从句\",\"correct\":false}]}"
+      },
+      {
+        "id": "ex_clause_2",
+        "kind": "multiple-choice",
+        "difficulty": 5,
+        "xp": 14,
+        "instruction": "指出划线部分是哪种从句",
+        "context": "He arrived late, **which annoyed everyone**.",
+        "explanation": "which 指代前面整句内容，属于非限定性定语从句。",
+        "tags_json": "[\"从句识别\"]",
+        "payload_json": "{\"stem\":\"He arrived late, which annoyed everyone.\",\"options\":[{\"id\":\"o1\",\"label\":\"非限定性定语从句\",\"correct\":true},{\"id\":\"o2\",\"label\":\"限定性定语从句\",\"correct\":false},{\"id\":\"o3\",\"label\":\"结果状语从句\",\"correct\":false},{\"id\":\"o4\",\"label\":\"同位语从句\",\"correct\":false}]}"
+      }
+    ],
+    "exercise_entities": [
+      {
+        "exercise_id": "ex_match_1",
+        "entity_id": "w_mitigate"
+      },
+      {
+        "exercise_id": "ex_match_1",
+        "entity_id": "w_resilient"
+      },
+      {
+        "exercise_id": "ex_match_1",
+        "entity_id": "w_ambiguous"
+      },
+      {
+        "exercise_id": "ex_match_1",
+        "entity_id": "w_scrutiny"
+      },
+      {
+        "exercise_id": "ex_match_1",
+        "entity_id": "w_coherent"
+      },
+      {
+        "exercise_id": "ex_choice_1",
+        "entity_id": "w_mitigate"
+      },
+      {
+        "exercise_id": "ex_choice_2",
+        "entity_id": "w_ambiguous"
+      },
+      {
+        "exercise_id": "ex_choice_3",
+        "entity_id": "w_reluctant"
+      },
+      {
+        "exercise_id": "ex_choice_4",
+        "entity_id": "w_in_light_of"
+      },
+      {
+        "exercise_id": "ex_spell_1",
+        "entity_id": "w_ambiguous"
+      },
+      {
+        "exercise_id": "ex_spell_2",
+        "entity_id": "w_resilient"
+      },
+      {
+        "exercise_id": "ex_spell_3",
+        "entity_id": "w_scrutiny"
+      },
+      {
+        "exercise_id": "ex_dict_1",
+        "entity_id": "w_accumulate"
+      },
+      {
+        "exercise_id": "ex_dict_2",
+        "entity_id": "w_ubiquitous"
+      },
+      {
+        "exercise_id": "ex_dict_3",
+        "entity_id": "w_sustain"
+      },
+      {
+        "exercise_id": "ex_cloze_1",
+        "entity_id": "g_present_perfect"
+      },
+      {
+        "exercise_id": "ex_cloze_1",
+        "entity_id": "w_accumulate"
+      },
+      {
+        "exercise_id": "ex_cloze_2",
+        "entity_id": "g_prepositional_phrase"
+      },
+      {
+        "exercise_id": "ex_cloze_2",
+        "entity_id": "w_in_light_of"
+      },
+      {
+        "exercise_id": "ex_cloze_3",
+        "entity_id": "g_relative_clause"
+      },
+      {
+        "exercise_id": "ex_trans_1",
+        "entity_id": "w_take_into_account"
+      },
+      {
+        "exercise_id": "ex_trans_2",
+        "entity_id": "w_mitigate"
+      },
+      {
+        "exercise_id": "ex_trans_2",
+        "entity_id": "g_modal_verbs"
+      },
+      {
+        "exercise_id": "ex_trans_3",
+        "entity_id": "w_accumulate"
+      },
+      {
+        "exercise_id": "ex_order_1",
+        "entity_id": "g_relative_clause"
+      },
+      {
+        "exercise_id": "ex_order_2",
+        "entity_id": "g_present_perfect"
+      },
+      {
+        "exercise_id": "ex_order_2",
+        "entity_id": "w_in_light_of"
+      },
+      {
+        "exercise_id": "ex_order_3",
+        "entity_id": "g_passive_voice"
+      },
+      {
+        "exercise_id": "ex_corr_1",
+        "entity_id": "g_relative_clause"
+      },
+      {
+        "exercise_id": "ex_corr_2",
+        "entity_id": "g_comparative"
+      },
+      {
+        "exercise_id": "ex_corr_3",
+        "entity_id": "g_passive_voice"
+      },
+      {
+        "exercise_id": "ex_corr_4",
+        "entity_id": "g_sentence_structure"
+      },
+      {
+        "exercise_id": "ex_rewrite_1",
+        "entity_id": "g_passive_voice"
+      },
+      {
+        "exercise_id": "ex_rewrite_2",
+        "entity_id": "g_relative_clause"
+      },
+      {
+        "exercise_id": "ex_shadow_1",
+        "entity_id": "s_coffee_small_talk"
+      },
+      {
+        "exercise_id": "ex_shadow_2",
+        "entity_id": "s_mitigate_risk"
+      },
+      {
+        "exercise_id": "ex_shadow_3",
+        "entity_id": "s_small_habits"
+      },
+      {
+        "exercise_id": "ex_role_1",
+        "entity_id": "s_meeting_shift"
+      },
+      {
+        "exercise_id": "ex_role_2",
+        "entity_id": "s_travel_checkin"
+      },
+      {
+        "exercise_id": "ex_pos_2",
+        "entity_id": "w_scrutiny"
+      },
+      {
+        "exercise_id": "ex_ctx_1",
+        "entity_id": "w_take_into_account"
+      },
+      {
+        "exercise_id": "ex_ctx_2",
+        "entity_id": "w_ubiquitous"
+      },
+      {
+        "exercise_id": "ex_tense_1",
+        "entity_id": "g_present_perfect"
+      },
+      {
+        "exercise_id": "ex_prep_1",
+        "entity_id": "g_article_definite"
+      },
+      {
+        "exercise_id": "ex_prep_2",
+        "entity_id": "g_prepositional_phrase"
+      },
+      {
+        "exercise_id": "ex_clause_1",
+        "entity_id": "g_relative_clause"
+      },
+      {
+        "exercise_id": "ex_clause_2",
+        "entity_id": "g_relative_clause"
+      }
+    ],
+    "assessment_modules": [
+      {
+        "id": "vocabulary",
+        "title": "词汇测试",
+        "subtitle": "Vocabulary Test",
+        "description": "从词汇量、词义、词性、拼写到使用场景，五个分项给出一个可解释的词汇画像，而不是一个孤立分数。",
+        "minutes": 12,
+        "sort_order": 0
+      },
+      {
+        "id": "grammar",
+        "title": "语法测试",
+        "subtitle": "Grammar Test",
+        "description": "覆盖时态、句子结构、纠错、介词冠词与从句识别。结果会指出具体薄弱结构，而不只是正确率。",
+        "minutes": 14,
+        "sort_order": 1
+      },
+      {
+        "id": "speaking",
+        "title": "口语测试",
+        "subtitle": "Speaking Test",
+        "description": "朗读、语音输入、复述与情景表达四段评估。当前阶段使用文本输入模拟语音识别，接口已为真实音频预留。",
+        "minutes": 10,
+        "sort_order": 2
+      }
+    ],
+    "assessment_sections": [
+      {
+        "id": "sec_vocab_size",
+        "module_id": "vocabulary",
+        "title": "词汇量估计",
+        "description": "按频率分层抽样，估计你的可识别词汇量。",
+        "kind": "multiple-choice",
+        "skill": "词汇广度",
+        "sort_order": 0,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_vocab_meaning",
+        "module_id": "vocabulary",
+        "title": "词义理解",
+        "description": "在真实语境中选出最贴切的词。",
+        "kind": "multiple-choice",
+        "skill": "语境辨析",
+        "sort_order": 1,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_vocab_pos",
+        "module_id": "vocabulary",
+        "title": "词性判断",
+        "description": "识别词在句中的语法角色。",
+        "kind": "multiple-choice",
+        "skill": "语法敏感度",
+        "sort_order": 2,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_vocab_spell",
+        "module_id": "vocabulary",
+        "title": "拼写测试",
+        "description": "根据释义写出完整拼写。",
+        "kind": "spelling",
+        "skill": "形式准确度",
+        "sort_order": 3,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_vocab_context",
+        "module_id": "vocabulary",
+        "title": "使用场景",
+        "description": "判断词语最自然的语域与场景。",
+        "kind": "multiple-choice",
+        "skill": "语域意识",
+        "sort_order": 4,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_gram_tense",
+        "module_id": "grammar",
+        "title": "时态判断",
+        "description": "根据时间标记选择正确的时态。",
+        "kind": "multiple-choice",
+        "skill": "时态",
+        "sort_order": 0,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_gram_structure",
+        "module_id": "grammar",
+        "title": "句子结构",
+        "description": "把词块还原为符合语法与逻辑的句子。",
+        "kind": "sentence-order",
+        "skill": "句子建构",
+        "sort_order": 1,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_gram_correct",
+        "module_id": "grammar",
+        "title": "语法纠错",
+        "description": "找出并改正句子中的错误。",
+        "kind": "error-correction",
+        "skill": "错误识别",
+        "sort_order": 2,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_gram_prep",
+        "module_id": "grammar",
+        "title": "介词与冠词",
+        "description": "固定搭配与冠词选择的稳定性测试。",
+        "kind": "multiple-choice",
+        "skill": "搭配",
+        "sort_order": 3,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_gram_clause",
+        "module_id": "grammar",
+        "title": "从句识别",
+        "description": "判断从句类型与关系词的适用条件。",
+        "kind": "multiple-choice",
+        "skill": "从句",
+        "sort_order": 4,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_speak_read",
+        "module_id": "speaking",
+        "title": "朗读测试",
+        "description": "按意群朗读，系统评估节奏与完整度。",
+        "kind": "shadowing",
+        "skill": "发音清晰度",
+        "sort_order": 0,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_speak_input",
+        "module_id": "speaking",
+        "title": "语音输入",
+        "description": "说出你听到的句子，系统转写后比对。",
+        "kind": "shadowing",
+        "skill": "听辨与转述",
+        "sort_order": 1,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_speak_repeat",
+        "module_id": "speaking",
+        "title": "句子复述",
+        "description": "看中文复述英文原句，检验工作记忆。",
+        "kind": "shadowing",
+        "skill": "短时记忆",
+        "sort_order": 2,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_speak_scene",
+        "module_id": "speaking",
+        "title": "情景表达",
+        "description": "在具体场景中组织完整回应。",
+        "kind": "roleplay",
+        "skill": "交际策略",
+        "sort_order": 3,
+        "section_role": "graded"
+      },
+      {
+        "id": "sec_speak_eval",
+        "module_id": "speaking",
+        "title": "口语能力评估",
+        "description": "汇总以上四项，给出分级与改进建议。",
+        "kind": "roleplay",
+        "skill": "综合评估",
+        "sort_order": 4,
+        "section_role": "summary"
+      }
+    ],
+    "assessment_section_exercises": [
+      {
+        "section_id": "sec_vocab_size",
+        "exercise_id": "ex_choice_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_vocab_size",
+        "exercise_id": "ex_choice_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_vocab_meaning",
+        "exercise_id": "ex_choice_3",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_vocab_meaning",
+        "exercise_id": "ex_choice_4",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_vocab_pos",
+        "exercise_id": "ex_pos_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_vocab_pos",
+        "exercise_id": "ex_pos_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_vocab_spell",
+        "exercise_id": "ex_spell_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_vocab_spell",
+        "exercise_id": "ex_spell_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_vocab_context",
+        "exercise_id": "ex_ctx_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_vocab_context",
+        "exercise_id": "ex_ctx_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_gram_tense",
+        "exercise_id": "ex_tense_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_gram_tense",
+        "exercise_id": "ex_cloze_1",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_gram_structure",
+        "exercise_id": "ex_order_2",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_gram_structure",
+        "exercise_id": "ex_order_3",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_gram_correct",
+        "exercise_id": "ex_corr_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_gram_correct",
+        "exercise_id": "ex_corr_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_gram_prep",
+        "exercise_id": "ex_prep_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_gram_prep",
+        "exercise_id": "ex_prep_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_gram_clause",
+        "exercise_id": "ex_clause_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_gram_clause",
+        "exercise_id": "ex_clause_2",
+        "sort_order": 1
+      },
+      {
+        "section_id": "sec_gram_clause",
+        "exercise_id": "ex_cloze_3",
+        "sort_order": 2
+      },
+      {
+        "section_id": "sec_speak_read",
+        "exercise_id": "ex_shadow_1",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_speak_input",
+        "exercise_id": "ex_shadow_2",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_speak_repeat",
+        "exercise_id": "ex_shadow_3",
+        "sort_order": 0
+      },
+      {
+        "section_id": "sec_speak_scene",
+        "exercise_id": "ex_role_1",
+        "sort_order": 0
+      }
+    ]
+  }
+}
