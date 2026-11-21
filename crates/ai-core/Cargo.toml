@@ -1,0 +1,29 @@
+[package]
+name = "ai-core"
+description = "Reusable AI infrastructure kernel for SAGE: errors, config, observability, async lifecycle primitives and the provider system."
+version.workspace = true
+edition.workspace = true
+rust-version.workspace = true
+license.workspace = true
+publish.workspace = true
+
+[dependencies]
+thiserror.workspace = true
+serde.workspace = true
+serde_json.workspace = true
+tokio.workspace = true
+tracing.workspace = true
+reqwest.workspace = true
+futures-core.workspace = true
+rusqlite.workspace = true
+# Optional: only needed by hosts that want a ready-made `tracing` subscriber.
+tracing-subscriber = { workspace = true, optional = true }
+
+[dev-dependencies]
+tempfile.workspace = true
+tracing-subscriber.workspace = true
+
+[features]
+default = []
+# Opt-in helper that installs a process-wide `tracing` subscriber.
+subscriber = ["dep:tracing-subscriber"]

@@ -1,0 +1,48 @@
+[workspace]
+resolver = "2"
+members = ["crates/ai-core", "crates/ai-core-tauri"]
+default-members = ["crates/ai-core", "crates/ai-core-tauri"]
+
+[workspace.package]
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.85"
+license = "MIT OR Apache-2.0"
+publish = false
+
+[workspace.dependencies]
+# Phase 1: error handling, serialization, async runtime, structured logging and
+# test isolation only.
+thiserror = "2.0.21"
+serde = { version = "1.0.229", features = ["derive"] }
+serde_json = "1.0.154"
+tokio = { version = "1.54.1", features = [
+    "rt",
+    "rt-multi-thread",
+    "macros",
+    "time",
+    "sync",
+    "signal",
+] }
+tracing = "0.1.44"
+tracing-subscriber = { version = "0.3.23", features = ["fmt", "env-filter"] }
+tempfile = "3.27.0"
+# Phase 2: HTTP transport for the real provider adapters. `rustls` (ring
+# provider) keeps the build free of a system OpenSSL dependency; `futures-core`
+# is only needed for the `Stream` trait used by the streaming API.
+reqwest = { version = "0.12.28", default-features = false, features = [
+    "json",
+    "stream",
+    "charset",
+    "http2",
+    "rustls-tls",
+] }
+futures-core = "0.3.34"
+# Phase 4: the host-facing adapter depends on the core, never the other way
+# around, and deliberately has no `tauri` dependency: it emits envelopes the host
+# forwards with `AppHandle::emit`.
+ai-core = { path = "crates/ai-core" }
+# Phase 3: usage accounting. `rusqlite` with the `bundled` feature compiles
+# SQLite from source, so Windows/macOS/Linux need no system library. Every
+# database call runs on the blocking pool (`async_utils::run_blocking`).
+rusqlite = { version = "0.32.1", features = ["bundled"] }
