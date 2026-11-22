@@ -48,7 +48,7 @@ src/
 src-tauri/
 ├─ src/commands/            Rust Command 骨架（app / user / learning / knowledge）
 ├─ src/error.rs             AppError → "code:message" 序列化
-├─ src/state.rs             内存 KV（第二阶段替换为 SQLite）
+├─ src/state.rs             AppState { db: Arc<Database>, ai: Arc<AiState> }
 ├─ capabilities/default.json 最小权限
 └─ tauri.conf.json          窗口、CSP、打包配置
 ```
@@ -178,6 +178,33 @@ services/api/transport.ts
 
 硬性约束：**AI 不允许返回可执行的 React/JS 代码**。AI 只产出经过定义的结构化数据
 （计划项、建议、题目），前端用固定的组件渲染。
+
+### 9.1 AI 集成（1.0.1）
+
+SAGE Intelligence 以 **Rust Library** 形式随客户端编译，不存在第二个进程：
+
+```
+页面（settings/ai-section）
+  │  aiService.getStatus / upsertProvider / complete / startStream / cancelStream
+  ▼
+services/api/ai.service.ts        ← 前端唯一 AI 入口
+  │  serve(ai_*, ...)：非 Tauri 环境直接返回 unavailable（不伪造结果）
+  ▼
+Tauri Command（src-tauri/src/ai/commands.rs）
+  │  ai_status / ai_provider_* / ai_complete / ai_stream_* / ai_cancel
+  ▼
+OutputEngine（ai-core）→ ProviderRuntime → Provider（HTTP）
+  │
+  └─ 事件：ai-core://*  → AppHandle::emit → aiService.subscribe()
+           sage-ai://stream-finished（客户端终态摘要）
+```
+
+约束：
+
+1. 页面不得直接 `listen` 框架事件，必须经过 `aiService.subscribe()`。
+2. 流式只走事件，不把增量塞进一次 `ApiResult`。
+3. API Key 只进不出：命令入参可以带密钥，出参只有 `hasApiKey`。
+4. AI 存储与业务库分离：配置在 `ai_providers`，密钥在独立文件，框架数据在 `ai-core-data/`。
 
 ---
 

@@ -11,6 +11,7 @@ export * as knowledgeService from "./knowledge.service";
 export * as trainingService from "./training.service";
 export * as reviewService from "./review.service";
 export * as userService from "./user.service";
+export * as aiService from "./ai.service";
 
 export type { ReviewQueuePayload, ReviewSubmitResult } from "./review.service";
 export { COMMANDS } from "./contracts";

@@ -29,8 +29,6 @@ describe("命令能力声明", () => {
         "plan_get",
         "plan_regenerate",
         "plan_toggle_item",
-        "review_queue",
-        "review_submit",
         "sync_trigger",
       ].sort(),
     );
@@ -40,9 +38,14 @@ describe("命令能力声明", () => {
     expect(isBackendReady(COMMANDS.trainingSubmit)).toBe(true);
     expect(isBackendReady(COMMANDS.assessmentSubmit)).toBe(true);
     expect(isBackendReady(COMMANDS.knowledgeList)).toBe(true);
+    expect(isBackendReady(COMMANDS.reviewQueue)).toBe(true);
+
+    // 1.0.1：AI 命令已由 Rust 实现（非桌面环境由 service 层返回 unavailable）
+    expect(isBackendReady(COMMANDS.aiStatus)).toBe(true);
+    expect(isBackendReady(COMMANDS.aiProviderUpsert)).toBe(true);
+    expect(isBackendReady(COMMANDS.aiStreamStart)).toBe(true);
 
     expect(isBackendReady(COMMANDS.dashboardSnapshot)).toBe(false);
-    expect(isBackendReady(COMMANDS.reviewQueue)).toBe(false);
     expect(isBackendReady("not_a_command")).toBe(false);
   });
 });

@@ -15,12 +15,14 @@ pub fn app_health() -> bool {
     true
 }
 
+/// 版本号只有一个来源：`Cargo.toml` 的 `package.version`（与 `tauri.conf.json`、
+/// `package.json` 必须一致）。禁止在代码里写死版本字符串。
 #[tauri::command]
 pub fn app_info() -> AppInfo {
     AppInfo {
         name: "Sage",
-        version: "0.1.0",
-        stage: "phase-2-sqlite",
+        version: env!("CARGO_PKG_VERSION"),
+        stage: "release-1.0.1",
         data_source: "backend",
     }
 }

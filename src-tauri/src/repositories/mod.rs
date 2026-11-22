@@ -3,6 +3,7 @@
 //! 所有函数接收 `&Connection`，因此既能在只读查询里用，也能在 `Transaction` 内复用
 //! （`Transaction` 通过 Deref 提供 `&Connection`）。
 
+pub mod ai_repository;
 pub mod assessment_repository;
 pub mod entity_repository;
 pub mod exercise_repository;

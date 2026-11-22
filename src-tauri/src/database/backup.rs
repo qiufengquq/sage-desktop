@@ -186,7 +186,7 @@ mod tests {
                 |row| row.get(0),
             )
             .expect("count");
-        assert_eq!(tables, 36);
+        assert_eq!(tables, 37);
 
         drop(restored);
         drop(db);

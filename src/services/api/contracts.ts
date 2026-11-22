@@ -48,6 +48,16 @@ export const COMMANDS = {
   // 复习（第二阶段新增，Rust 侧在 2B 实现）
   reviewQueue: "review_queue",
   reviewSubmit: "review_submit",
+
+  // SAGE Intelligence（1.0.1 新增）
+  aiStatus: "ai_status",
+  aiVersion: "ai_version",
+  aiProviderUpsert: "ai_provider_upsert",
+  aiProviderDelete: "ai_provider_delete",
+  aiProviderTest: "ai_provider_test",
+  aiComplete: "ai_complete",
+  aiStreamStart: "ai_stream_start",
+  aiStreamCancel: "ai_stream_cancel",
 } as const;
 
 export type CommandName = (typeof COMMANDS)[keyof typeof COMMANDS];
@@ -84,6 +94,15 @@ export const COMMAND_STATUS: Record<CommandName, CommandStatus> = {
   training_check: "ready",
   review_queue: "ready",
   review_submit: "ready",
+  // AI：只在桌面端可用；mock 模式返回 unavailable，不伪造结果
+  ai_status: "ready",
+  ai_version: "ready",
+  ai_provider_upsert: "ready",
+  ai_provider_delete: "ready",
+  ai_provider_test: "ready",
+  ai_complete: "ready",
+  ai_stream_start: "ready",
+  ai_stream_cancel: "ready",
 
   // 尚未实现（Rust 侧返回 unavailable），前端按 mock 回退
   sync_trigger: "planned",

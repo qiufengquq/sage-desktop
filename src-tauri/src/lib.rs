@@ -1,3 +1,4 @@
+pub mod ai;
 pub mod algorithms;
 pub mod commands;
 pub mod database;
@@ -7,6 +8,7 @@ pub mod repositories;
 pub mod services;
 pub mod state;
 
+use ai::commands as ai_commands;
 use commands::{app, knowledge, learning, user};
 use state::AppState;
 use tauri::Manager;
@@ -59,7 +61,22 @@ pub fn run() {
             knowledge::knowledge_list,
             knowledge::knowledge_detail,
             knowledge::knowledge_neighbors,
+            // SAGE Intelligence（Library 集成）
+            ai_commands::ai_status,
+            ai_commands::ai_version,
+            ai_commands::ai_provider_upsert,
+            ai_commands::ai_provider_delete,
+            ai_commands::ai_provider_test,
+            ai_commands::ai_complete,
+            ai_commands::ai_stream_start,
+            ai_commands::ai_stream_cancel,
         ])
-        .run(tauri::generate_context!())
-        .expect("Sage 启动失败");
+        .build(tauri::generate_context!())
+        .expect("Sage 启动失败")
+        .run(|app, event| {
+            // 退出时只标记状态，不强制中断在途请求，避免拖慢关闭流程
+            if let tauri::RunEvent::Exit = event {
+                app.state::<AppState>().ai.shutdown();
+            }
+        });
 }

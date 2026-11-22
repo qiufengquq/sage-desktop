@@ -1,27 +1,25 @@
-//! 应用状态：只持有数据库句柄。
+//! 应用状态：数据库句柄 + AI 运行状态。
 //!
-//! 第一阶段这里是内存 KV，第二阶段换成真实 SQLite；命令层拿到的永远是
-//! `Arc<Database>`，因此可以安全地移入 `spawn_blocking` 闭包。
+//! 只有一个 `AppState`：AI 不新建连接管理器，需要读配置时由命令层把业务库连接传进去。
+//! 命令层拿到的永远是 `Arc<...>`，因此可以安全地移入 `spawn_blocking` 闭包。
 
-use std::path::PathBuf;
+use std::path::{Path, PathBuf};
 use std::sync::Arc;
 
 use tauri::{AppHandle, Manager};
 
+use crate::ai::AiState;
 use crate::database::{Database, DB_FILE_NAME};
 use crate::error::{AppError, AppResult};
 use crate::repositories::{state_repository, user_repository};
 
 pub struct AppState {
     pub db: Arc<Database>,
+    pub ai: Arc<AiState>,
 }
 
 impl AppState {
-    pub fn new(db: Database) -> Self {
-        Self { db: Arc::new(db) }
-    }
-
-    /// 启动时初始化：定位文件 → 建库/迁移/内容同步 → 首启种子
+    /// 启动时初始化：定位文件 → 建库/迁移/内容同步 → 首启种子 → AI 状态
     pub fn init(app: &AppHandle) -> AppResult<Self> {
         let path = resolve_db_path(app)?;
         if path
@@ -44,7 +42,23 @@ impl AppState {
             Ok(())
         })?;
 
-        Ok(Self { db: Arc::new(db) })
+        let db = Arc::new(db);
+
+        // AI 数据目录跟随数据库目录：使用 `SAGE_DB_PATH` 隔离数据时，AI 也一起隔离，
+        // 不会把测试数据写进真实的应用数据目录。
+        let ai_dir = path
+            .parent()
+            .map(Path::to_path_buf)
+            .unwrap_or_else(|| PathBuf::from("."));
+        let ai = Arc::new(AiState::new(ai_dir));
+
+        // AI 初始化失败不阻塞启动：AI 是可选能力，状态与原因记录在 `AiStatusView`
+        db.with_conn(|conn| {
+            ai.initialize(conn);
+            Ok(())
+        })?;
+
+        Ok(Self { db, ai })
     }
 
     pub fn db(&self) -> Arc<Database> {

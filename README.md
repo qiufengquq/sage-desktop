@@ -1,19 +1,21 @@
 # Sage
 
-英语智能学习平台的桌面端应用。**第一阶段**：完整的桌面端前端主体、设计系统、
-组件体系、七大模块与基础交互；后端只保留接口边界，业务数据使用本地模拟层。
+英语智能学习平台的桌面端应用。**1.0.1（Desktop）**：完整桌面端前端与设计系统、
+七大业务模块、Rust + SQLite 本地后端，并集成 **SAGE Intelligence**（Library 模式，
+锁定 commit）提供 AI Provider 配置、一次性/流式请求与取消能力。
 
 ## 技术栈
 
 React 19 · TypeScript 7（strict）· Vite 8 · Tailwind CSS 4 · shadcn/ui（Radix + CVA）·
-Lucide React · Zustand · React Router 8 · Tauri 2
+Lucide React · Zustand · React Router 8 · Tauri 2 · Rust + rusqlite ·
+SAGE Intelligence 0.1.0（`ai-core` / `ai-core-tauri`，commit `33be312c`）
 
 ## 环境要求
 
 | 依赖 | 版本 | 用途 |
 |---|---|---|
 | Node.js | ≥ 20（开发使用 24） | 前端构建 |
-| Rust | stable ≥ 1.77（开发使用 1.99） | Tauri |
+| Rust | stable ≥ 1.85（开发使用 1.99） | Tauri + SAGE Intelligence |
 | WebView2 | Windows 10/11 自带 | 桌面渲染 |
 
 ## 快速开始

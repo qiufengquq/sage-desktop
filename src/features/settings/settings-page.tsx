@@ -1,6 +1,7 @@
 import { useEffect, useState } from "react";
 import {
   BellRing,
+  Bot,
   CloudCheck,
   Database,
   Info,
@@ -11,6 +12,7 @@ import {
   Trash2,
   UserRound,
 } from "lucide-react";
+import { AiSection } from "./ai-section";
 import { toast } from "sonner";
 import type { AppSettings, LocalDataSummary, SyncStatus, UserProfile } from "@/types";
 import { dataSource, isTauriRuntime, userService } from "@/services/api";
@@ -44,6 +46,7 @@ const SECTIONS = [
   { id: "appearance", label: "外观与主题", icon: Palette },
   { id: "sync", label: "数据同步", icon: CloudCheck },
   { id: "local", label: "本地数据", icon: Database },
+  { id: "ai", label: "AI 集成", icon: Bot },
   { id: "about", label: "关于", icon: Info },
 ];
 
@@ -121,6 +124,19 @@ export function SettingsPage() {
     }
   };
 
+  /**
+   * 分区跳转必须走脚本滚动，不能改 `location.hash`：
+   * 应用使用 HashRouter，`#profile` 会被解析成路由 `/profile`，直接掉进 404 兜底页。
+   */
+  const jumpToSection = (id: string) => {
+    const target = document.getElementById(id);
+    if (!target) return;
+    target.scrollIntoView({ behavior: "smooth", block: "start" });
+    // 让键盘与读屏焦点跟随跳转（section 默认不可聚焦，临时补一个 tabindex）
+    if (!target.hasAttribute("tabindex")) target.setAttribute("tabindex", "-1");
+    target.focus({ preventScroll: true });
+  };
+
   if (profileQuery.initial || settingsQuery.initial) {
     return (
       <PageContainer>
@@ -158,13 +174,14 @@ export function SettingsPage() {
               const Icon = section.icon;
               return (
                 <li key={section.id}>
-                  <a
-                    href={`#${section.id}`}
-                    className="flex items-center gap-2 rounded-sm px-2 py-1.5 text-2xs text-ink-muted transition-colors hover:bg-sunken hover:text-ink"
+                  <button
+                    type="button"
+                    onClick={() => jumpToSection(section.id)}
+                    className="flex w-full items-center gap-2 rounded-sm px-2 py-1.5 text-left text-2xs text-ink-muted transition-colors hover:bg-sunken hover:text-ink"
                   >
                     <Icon className="size-3.5" />
                     {section.label}
-                  </a>
+                  </button>
                 </li>
               );
             })}
@@ -525,16 +542,19 @@ export function SettingsPage() {
             </div>
           </section>
 
+          {/* AI 集成 */}
+          <AiSection />
+
           {/* 关于 */}
           <section id="about" className="scroll-mt-4">
-            <SectionTitle icon={Info} title="关于 Sage" description="第一阶段：桌面端前端" />
+            <SectionTitle icon={Info} title="关于 Sage" description={`桌面正式版 ${__APP_VERSION__}`} />
             <div className="rounded-md border border-line bg-surface p-4">
               <div className="flex items-start gap-3">
                 <div className="flex size-9 items-center justify-center rounded-sm bg-brand text-brand-ink">
                   <span className="font-display text-base leading-none">S</span>
                 </div>
                 <div>
-                  <div className="text-[13.5px] font-medium text-ink">Sage 0.1.0</div>
+                  <div className="text-[13.5px] font-medium text-ink">{`Sage ${__APP_VERSION__}`}</div>
                   <p className="mt-0.5 max-w-[60ch] text-2xs leading-relaxed text-ink-muted">
                     英语智能学习平台。React + TypeScript + Tailwind CSS 4 + shadcn/ui + Tauri 2
                     构建。学习数据保存在本机，所有服务调用经过统一传输层，可切换到 Rust

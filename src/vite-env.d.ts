@@ -1,5 +1,8 @@
 /// <reference types="vite/client" />
 
+/** 由 vite.config.ts 从 package.json 注入，禁止在页面里硬编码版本号 */
+declare const __APP_VERSION__: string;
+
 interface ImportMetaEnv {
   /** mock = 使用本地模拟数据；backend = 调用 Tauri Commands */
   readonly VITE_SAGE_DATA_SOURCE?: "mock" | "backend";

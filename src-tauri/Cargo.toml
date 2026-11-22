@@ -1,10 +1,11 @@
 [package]
 name = "sage"
-version = "0.1.0"
+version = "1.0.1"
 description = "Sage - 英语智能学习平台桌面端"
 authors = ["Sage"]
 edition = "2021"
-rust-version = "1.77"
+# ai-core 要求 1.85；客户端跟随上游下限，避免"依赖能编译但宿主不允许"的隐性不一致
+rust-version = "1.85"
 
 [lib]
 name = "sage_lib"
@@ -21,6 +22,11 @@ serde_json = "1"
 rusqlite = { version = "0.32", features = ["bundled", "backup"] }
 chrono = { version = "0.4", features = ["serde"] }
 sha2 = "0.10"
+# SAGE Intelligence：Library 集成。上游目前 0 tag / 0 release，
+# 因此锁定到具体 commit（见 docs/AI_INTEGRATION.md §版本）。
+# 升级时两行必须同时改，并在 RELEASE_NOTES 记录新的 commit。
+ai-core = { git = "https://github.com/qiufengquq/sage-intelligence", rev = "33be312c6949afa7f20051ec40fd520002ec5da6" }
+ai-core-tauri = { git = "https://github.com/qiufengquq/sage-intelligence", rev = "33be312c6949afa7f20051ec40fd520002ec5da6" }
 
 [profile.release]
 codegen-units = 1

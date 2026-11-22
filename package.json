@@ -1,7 +1,7 @@
 {
   "name": "sage",
   "private": true,
-  "version": "0.1.0",
+  "version": "1.0.1",
   "description": "Sage — 英语智能学习平台桌面端",
   "type": "module",
   "scripts": {

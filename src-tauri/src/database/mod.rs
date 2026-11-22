@@ -21,7 +21,7 @@ use rusqlite::{Connection, Transaction, TransactionBehavior};
 use crate::error::{AppError, AppResult};
 
 /// 当前程序的数据库结构版本（与最后一个迁移文件一致）
-pub const SCHEMA_VERSION: i64 = 2;
+pub const SCHEMA_VERSION: i64 = 3;
 
 /// 数据库文件名
 pub const DB_FILE_NAME: &str = "sage.db";
@@ -189,8 +189,8 @@ mod tests {
                 [],
                 |row| row.get(0),
             )?;
-            // 35 张业务表 + schema_migrations
-            assert_eq!(tables, 36, "表数量与设计不符");
+            // 36 张业务表 + schema_migrations（0003 新增 ai_providers）
+            assert_eq!(tables, 37, "表数量与设计不符");
 
             let views: i64 = conn.query_row(
                 "SELECT COUNT(*) FROM sqlite_master WHERE type = 'view'",

@@ -31,6 +31,11 @@ const MIGRATIONS: &[Migration] = &[
         name: "0002_model_alignment",
         sql: include_str!("migrations/0002_model_alignment.sql"),
     },
+    Migration {
+        version: 3,
+        name: "0003_ai",
+        sql: include_str!("migrations/0003_ai.sql"),
+    },
 ];
 
 fn checksum(sql: &str) -> String {

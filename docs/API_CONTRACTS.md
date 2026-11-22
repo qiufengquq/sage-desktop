@@ -101,6 +101,25 @@ VITE_SAGE_DATA_SOURCE=backend   # 通过 Tauri invoke 调用 Rust
 | `plan_apply_difficulty` | `level: number` | `StudyPlan` | ⏳ 占位 |
 | `plan_toggle_item` | `itemId: string` | `PlanItem[]` | ⏳ 占位 |
 
+### AI（SAGE Intelligence，1.0.1 新增）
+
+完整契约见 [AI_INTEGRATION.md](./AI_INTEGRATION.md)。
+
+| 命令 | 入参 | 返回 | 状态 |
+|---|---|---|---|
+| `ai_status` | — | `AiStatus` | ✅ **SQLite + Library** |
+| `ai_version` | — | `AiVersionInfo` | ✅（版本来自 Cargo.lock，编译期注入） |
+| `ai_provider_upsert` | `provider: AiProviderInput` | `AiProviderView` | ✅ **SQLite**（密钥写入独立文件） |
+| `ai_provider_delete` | `providerId` | `boolean` | ✅ **SQLite + 文件** |
+| `ai_provider_test` | `providerId?` | `AiProbeResult` | ✅（一次极小真实请求探测） |
+| `ai_complete` | `prompt, providerId?, model?, system?` | `AiCompletionResult` | ✅ |
+| `ai_stream_start` | 同上 | `AiStreamHandle` | ✅（事件流） |
+| `ai_stream_cancel` | `requestId` | `boolean` | ✅（协作式取消） |
+
+事件：`ai-core://started｜text-delta｜reasoning-delta｜tool-call-*｜structured-output｜usage-updated｜error｜completed`，
+以及客户端终态事件 `sage-ai://stream-finished`。
+非 Tauri 环境（浏览器 / mock）下这些命令统一返回 `unavailable`，不伪造结果。
+
 ### 测评
 
 | 命令 | 入参 | 返回 | 状态 |
