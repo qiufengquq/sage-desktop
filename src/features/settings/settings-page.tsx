@@ -2,6 +2,7 @@ import { useEffect, useState } from "react";
 import {
   BellRing,
   Bot,
+  Check,
   CloudCheck,
   Database,
   Info,
@@ -14,7 +15,13 @@ import {
 } from "lucide-react";
 import { AiSection } from "./ai-section";
 import { toast } from "sonner";
-import type { AppSettings, LocalDataSummary, SyncStatus, UserProfile } from "@/types";
+import type {
+  AccentMode,
+  AppSettings,
+  LocalDataSummary,
+  SyncStatus,
+  UserProfile,
+} from "@/types";
 import { dataSource, isTauriRuntime, userService } from "@/services/api";
 import { useQuery } from "@/hooks/use-query";
 import { useUiStore } from "@/app/store/ui-store";
@@ -49,6 +56,43 @@ const SECTIONS = [
   { id: "ai", label: "AI 集成", icon: Bot },
   { id: "about", label: "关于", icon: Info },
 ];
+
+/** 色块使用浅色主题下的品牌值，作为色相示意（不随明暗切换） */
+const ACCENT_OPTIONS: ReadonlyArray<{ value: AccentMode; label: string; color: string }> = [
+  { value: "brand", label: "墨绿", color: "#1f5e4a" },
+  { value: "ember", label: "铜橙", color: "#a8622b" },
+  { value: "ocean", label: "海蓝", color: "#1f5f7a" },
+  { value: "violet", label: "藤紫", color: "#564a8f" },
+  { value: "rose", label: "玫红", color: "#8f3f55" },
+  { value: "amber", label: "琥珀", color: "#7a5c18" },
+];
+
+/** 主题卡片里的缩略预览使用固定色值，仅作示意 */
+const THEME_OPTIONS = [
+  {
+    value: "light",
+    label: "浅色",
+    description: "纸白底 · 深色字",
+    preview: { page: "#f7f7f4", card: "#ffffff", line: "#e2e4df" },
+  },
+  {
+    value: "dark",
+    label: "深色",
+    description: "墨黑底 · 浅色字",
+    preview: { page: "#0f1211", card: "#161a18", line: "#262c29" },
+  },
+  {
+    value: "system",
+    label: "跟随系统",
+    description: "随系统外观自动切换",
+    preview: null,
+  },
+] as const;
+
+const DENSITY_OPTIONS = [
+  { value: "comfortable", label: "舒适" },
+  { value: "compact", label: "紧凑" },
+] as const;
 
 export function SettingsPage() {
   const profileQuery = useQuery((options) => userService.getProfile(options), []);
@@ -382,95 +426,130 @@ export function SettingsPage() {
 
           {/* 外观 */}
           <section id="appearance" className="scroll-mt-4">
-            <SectionTitle icon={Palette} title="外观与主题" description="即时生效，保存在本地" />
-            <div className="space-y-4 rounded-md border border-line bg-surface p-4">
+            <SectionTitle
+              icon={Palette}
+              title="外观与主题"
+              description="即时生效，切换时底色与文字渐变过渡"
+            />
+            <div className="rounded-md border border-line bg-surface p-4">
+              {/* 主题 */}
               <div>
-                <Label>主题</Label>
-                <div className="mt-2 flex gap-2" role="group" aria-label="主题选择">
-                  {(
-                    [
-                      { value: "light", label: "浅色" },
-                      { value: "dark", label: "深色" },
-                      { value: "system", label: "跟随系统" },
-                    ] as const
-                  ).map((option) => (
-                    <button
-                      key={option.value}
-                      type="button"
-                      onClick={() => setTheme(option.value)}
-                      aria-pressed={theme === option.value}
-                      className={cn(
-                        "rounded-md border px-3 py-2 text-2xs transition-colors",
-                        theme === option.value
-                          ? "border-brand/50 bg-brand-tint text-brand"
-                          : "border-line bg-surface text-ink-muted hover:border-line-strong",
-                      )}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                  <span className="text-[13px] font-medium text-ink-soft">主题</span>
+                  <span className="text-2xs text-ink-muted">背景色会随主题一起变化</span>
+                </div>
+                <div className="mt-2 grid gap-2 sm:grid-cols-3" role="group" aria-label="主题选择">
+                  {THEME_OPTIONS.map((option) => {
+                    const selected = theme === option.value;
+                    return (
+                      <button
+                        key={option.value}
+                        type="button"
+                        onClick={() => setTheme(option.value)}
+                        aria-pressed={selected}
+                        className={cn(
+                          "flex items-center gap-2.5 rounded-md border p-2.5 text-left transition-colors",
+                          selected
+                            ? "border-brand/50 bg-brand-tint"
+                            : "border-line hover:border-line-strong hover:bg-sunken/50",
+                        )}
+                      >
+                        <ThemeSwatch preview={option.preview} />
+                        <span className="min-w-0 flex-1">
+                          <span className="block text-[13px] leading-tight text-ink">
+                            {option.label}
+                          </span>
+                          <span className="mt-0.5 block text-2xs leading-tight text-ink-muted">
+                            {option.description}
+                          </span>
+                        </span>
+                        <Check
+                          className={cn(
+                            "size-3.5 shrink-0",
+                            selected ? "text-brand" : "text-transparent",
+                          )}
+                        />
+                      </button>
+                    );
+                  })}
                 </div>
               </div>
 
-              <Separator />
+              <Separator className="my-4" />
 
-              <Row label="强调色" description="铜色用于连续学习与关键数据">
-                <div className="flex gap-1.5">
-                  {(
-                    [
-                      { value: "brand", label: "墨绿", color: "var(--brand)" },
-                      { value: "ember", label: "铜橙", color: "var(--ember)" },
-                    ] as const
-                  ).map((option) => (
-                    <button
-                      key={option.value}
-                      type="button"
-                      onClick={() => setAccent(option.value)}
-                      aria-pressed={accent === option.value}
-                      className={cn(
-                        "flex items-center gap-1.5 rounded-sm border px-2 py-1 text-2xs",
-                        accent === option.value
-                          ? "border-brand/50 bg-brand-tint/60 text-ink"
-                          : "border-line text-ink-muted",
-                      )}
-                    >
-                      <span
-                        className="size-2.5 rounded-full"
-                        style={{ backgroundColor: option.color }}
-                      />
-                      {option.label}
-                    </button>
-                  ))}
+              {/* 强调色 */}
+              <div>
+                <div className="flex flex-wrap items-baseline justify-between gap-x-3 gap-y-1">
+                  <span className="text-[13px] font-medium text-ink-soft">强调色</span>
+                  <span className="text-2xs text-ink-muted">
+                    作用于按钮、链接、焦点环、图表与页面底色
+                  </span>
                 </div>
-              </Row>
-
-              <Separator />
-
-              <Row label="界面密度" description="紧凑模式适合 13 寸屏幕">
-                <div className="flex gap-1.5">
-                  {(
-                    [
-                      { value: "comfortable", label: "舒适" },
-                      { value: "compact", label: "紧凑" },
-                    ] as const
-                  ).map((option) => (
-                    <button
-                      key={option.value}
-                      type="button"
-                      onClick={() => setDensity(option.value)}
-                      aria-pressed={density === option.value}
-                      className={cn(
-                        "rounded-sm border px-2 py-1 text-2xs",
-                        density === option.value
-                          ? "border-brand/50 bg-brand-tint/60 text-ink"
-                          : "border-line text-ink-muted",
-                      )}
-                    >
-                      {option.label}
-                    </button>
-                  ))}
+                <div
+                  className="mt-2 grid grid-cols-3 gap-1.5 sm:grid-cols-6"
+                  role="group"
+                  aria-label="强调色选择"
+                >
+                  {ACCENT_OPTIONS.map((option) => {
+                    const selected = accent === option.value;
+                    return (
+                      <button
+                        key={option.value}
+                        type="button"
+                        onClick={() => setAccent(option.value)}
+                        aria-pressed={selected}
+                        className={cn(
+                          "flex items-center justify-center gap-1.5 rounded-sm border px-2 py-1.5 text-2xs transition-colors",
+                          selected
+                            ? "border-brand/60 bg-brand-tint text-ink"
+                            : "border-line text-ink-muted hover:border-line-strong hover:bg-sunken/60 hover:text-ink-soft",
+                        )}
+                      >
+                        <span
+                          className="size-2.5 rounded-full ring-1 ring-line"
+                          style={{ backgroundColor: option.color }}
+                        />
+                        {option.label}
+                      </button>
+                    );
+                  })}
                 </div>
-              </Row>
+              </div>
+
+              <Separator className="my-4" />
+
+              {/* 界面密度 */}
+              <div className="flex flex-wrap items-center justify-between gap-3">
+                <div className="min-w-0">
+                  <div className="text-[13px] text-ink">界面密度</div>
+                  <p className="mt-0.5 text-2xs text-ink-muted">紧凑模式更适合 13 寸屏幕</p>
+                </div>
+                <div
+                  className="inline-flex shrink-0 rounded-md border border-line bg-sunken/60 p-0.5"
+                  role="group"
+                  aria-label="界面密度"
+                >
+                  {DENSITY_OPTIONS.map((option) => {
+                    const selected = density === option.value;
+                    return (
+                      <button
+                        key={option.value}
+                        type="button"
+                        onClick={() => setDensity(option.value)}
+                        aria-pressed={selected}
+                        className={cn(
+                          "rounded-sm px-2.5 py-1 text-2xs transition-colors",
+                          selected
+                            ? "bg-surface text-ink shadow-hairline"
+                            : "text-ink-muted hover:text-ink-soft",
+                        )}
+                      >
+                        {option.label}
+                      </button>
+                    );
+                  })}
+                </div>
+              </div>
             </div>
           </section>
 
@@ -651,6 +730,38 @@ function Row({
       </div>
       <div className="shrink-0">{children}</div>
     </div>
+  );
+}
+
+/** 主题卡片左侧的缩略预览：用固定色值示意底色与卡片的关系 */
+function ThemeSwatch({
+  preview,
+}: {
+  preview: { page: string; card: string; line: string } | null;
+}) {
+  if (!preview) {
+    return (
+      <span
+        aria-hidden="true"
+        className="flex size-9 shrink-0 items-center justify-center rounded-sm border border-line"
+        style={{ backgroundImage: "linear-gradient(135deg, #f7f7f4 0 50%, #0f1211 50% 100%)" }}
+      >
+        <span className="size-3.5 rounded-[3px] border border-white/60 bg-white/60" />
+      </span>
+    );
+  }
+
+  return (
+    <span
+      aria-hidden="true"
+      className="flex size-9 shrink-0 items-center justify-center rounded-sm border"
+      style={{ backgroundColor: preview.page, borderColor: preview.line }}
+    >
+      <span
+        className="h-4 w-5 rounded-[3px] border"
+        style={{ backgroundColor: preview.card, borderColor: preview.line }}
+      />
+    </span>
   );
 }
 

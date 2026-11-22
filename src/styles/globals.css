@@ -93,6 +93,113 @@
   --shadow-pop: 0 0 0 1px var(--line), 0 12px 34px -12px rgb(0 0 0 / 0.65);
 }
 
+/* ==========================================================================
+   强调色主题
+   --------------------------------------------------------------------------
+   覆盖品牌语义变量（--brand / --brand-ink / --brand-tint /
+   --brand-tint-strong），并给页面底色（--paper / --sunken）叠一层极淡的
+   同色相，让切换强调色时背景也随之偏色。卡片（--surface）、文字与语义色
+   保持不变，因此不会出现"换色后对比度失衡"或"整页变花"。
+
+   `data-accent` 与 `.dark` 都挂在 <html> 上：
+   - 浅色值用 `[data-accent="x"]`；
+   - 深色值必须写 `[data-accent="x"].dark`（更高优先级），否则会被上面的
+     `.dark` 默认墨绿覆盖 —— 这正是此前"切换强调色没有效果"的原因。
+   ========================================================================== */
+
+/* 页面色（--paper / --sunken）同时带一点强调色的色相，让"换色"不只发生在按钮上 */
+[data-accent="ember"] {
+  --paper: #faf7f2;
+  --sunken: #f4ece1;
+  --brand: #a8622b;
+  --brand-ink: #ffffff;
+  --brand-tint: #f7ece0;
+  --brand-tint-strong: #eeddc8;
+  /* 铜色成为主色后，第二强调色换成墨绿，避免图表两条序列同色 */
+  --ember: #1f5e4a;
+  --ember-ink: #ffffff;
+  --ember-tint: #e7efe9;
+}
+[data-accent="ember"].dark {
+  --paper: #141110;
+  --sunken: #0e0b09;
+  --brand: #d99a5b;
+  --brand-ink: #1a1209;
+  --brand-tint: #2a2118;
+  --brand-tint-strong: #3a2d1d;
+  --ember: #5aab8d;
+  --ember-ink: #07130f;
+  --ember-tint: #17281f;
+}
+
+[data-accent="ocean"] {
+  --paper: #f5f8fa;
+  --sunken: #e9eff3;
+  --brand: #1f5f7a;
+  --brand-ink: #ffffff;
+  --brand-tint: #e6eff4;
+  --brand-tint-strong: #cfe0ea;
+}
+[data-accent="ocean"].dark {
+  --paper: #0e1316;
+  --sunken: #090e10;
+  --brand: #5fa8c9;
+  --brand-ink: #07131a;
+  --brand-tint: #14242c;
+  --brand-tint-strong: #1d3540;
+}
+
+[data-accent="violet"] {
+  --paper: #f7f6fb;
+  --sunken: #efedf6;
+  --brand: #564a8f;
+  --brand-ink: #ffffff;
+  --brand-tint: #eeecf6;
+  --brand-tint-strong: #ddd8ec;
+}
+[data-accent="violet"].dark {
+  --paper: #121017;
+  --sunken: #0c0a11;
+  --brand: #a99bd9;
+  --brand-ink: #0f0b1a;
+  --brand-tint: #1f1b2e;
+  --brand-tint-strong: #2d2743;
+}
+
+[data-accent="rose"] {
+  --paper: #faf6f7;
+  --sunken: #f5ebee;
+  --brand: #8f3f55;
+  --brand-ink: #ffffff;
+  --brand-tint: #f7ebee;
+  --brand-tint-strong: #eed7dc;
+}
+[data-accent="rose"].dark {
+  --paper: #141013;
+  --sunken: #0f0b0d;
+  --brand: #d98aa0;
+  --brand-ink: #1a0d12;
+  --brand-tint: #2a1820;
+  --brand-tint-strong: #3a2230;
+}
+
+[data-accent="amber"] {
+  --paper: #fbf8ef;
+  --sunken: #f5eedc;
+  --brand: #7a5c18;
+  --brand-ink: #ffffff;
+  --brand-tint: #f6f0e0;
+  --brand-tint-strong: #eadfc4;
+}
+[data-accent="amber"].dark {
+  --paper: #141209;
+  --sunken: #0f0d07;
+  --brand: #d9b45f;
+  --brand-ink: #1a1509;
+  --brand-tint: #2a2415;
+  --brand-tint-strong: #3a3220;
+}
+
 @theme inline {
   --font-sans: "Instrument Sans Variable", "PingFang SC", "Microsoft YaHei",
     "Noto Sans SC", ui-sans-serif, system-ui, sans-serif;
@@ -211,6 +318,18 @@
     line-height: 1.6;
     font-feature-settings: "cv11", "ss01";
     overflow: hidden;
+    transition: background-color 220ms var(--ease-instrument);
+  }
+
+  /*
+   * 主题 / 强调色切换时颜色不再硬切：底色、边框、文字一起做短过渡。
+   * 放在 base 层，组件自己声明的 transition-* 工具类仍然可以覆盖。
+   */
+  #root,
+  #root * {
+    transition-property: background-color, border-color, color, fill, stroke;
+    transition-duration: 220ms;
+    transition-timing-function: var(--ease-instrument);
   }
 
   ::selection {

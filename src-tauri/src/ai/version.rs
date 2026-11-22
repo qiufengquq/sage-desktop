@@ -31,10 +31,11 @@ pub fn info() -> AiVersionInfo {
     }
 }
 
-/// 提交短 SHA（展示用），异常输入原样返回。
+/// 提交短 SHA（展示用）。支持 `<sha>-dirty` 形式；异常输入原样返回。
 pub fn short_commit(commit: &str) -> String {
-    if commit.len() >= 7 && commit.chars().all(|c| c.is_ascii_hexdigit()) {
-        commit[..7].to_string()
+    let sha = commit.split('-').next().unwrap_or(commit);
+    if sha.len() >= 7 && sha.chars().all(|c| c.is_ascii_hexdigit()) {
+        sha[..7].to_string()
     } else {
         commit.to_string()
     }
@@ -49,9 +50,14 @@ mod tests {
     fn injected_versions_are_real() {
         assert_eq!(CLIENT_VERSION, "1.0.1");
         assert_ne!(INTELLIGENCE_VERSION, "unknown", "build.rs 没能从 Cargo.lock 读到 ai-core 版本");
-        assert_ne!(INTELLIGENCE_COMMIT, "unknown", "build.rs 没能读到 git commit");
-        assert_eq!(INTELLIGENCE_COMMIT.len(), 40, "commit 必须是完整 SHA");
-        assert!(INTELLIGENCE_COMMIT.chars().all(|c| c.is_ascii_hexdigit()));
+        assert_ne!(INTELLIGENCE_COMMIT, "unknown", "build.rs 没能解析出 commit");
+        let sha = INTELLIGENCE_COMMIT.split('-').next().unwrap_or_default();
+        assert!(
+            (sha.len() == 40 && sha.chars().all(|c| c.is_ascii_hexdigit()))
+                || INTELLIGENCE_COMMIT == "workspace",
+            "commit 必须是 40 位 SHA（允许 -dirty 后缀）或 workspace，实际：{}",
+            INTELLIGENCE_COMMIT
+        );
         assert!(BUILD_TIME.ends_with('Z'), "构建时间必须是 UTC RFC3339");
         assert!(BUILD_TARGET.contains("windows"), "构建平台应反映真实目标");
         assert_eq!(PROTOCOL_VERSION, "1");
@@ -61,6 +67,8 @@ mod tests {
     #[test]
     fn short_commit_truncates_valid_hash() {
         assert_eq!(short_commit("33be312c6949afa7f20051ec40fd520002ec5da6"), "33be312");
+        assert_eq!(short_commit("33be312c6949afa7f20051ec40fd520002ec5da6-dirty"), "33be312");
         assert_eq!(short_commit("unknown"), "unknown");
+        assert_eq!(short_commit("workspace"), "workspace");
     }
 }

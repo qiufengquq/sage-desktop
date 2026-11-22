@@ -11,16 +11,19 @@
 |---|---|---|
 | SAGE Client | `1.0.1` | `package.json` / `src-tauri/Cargo.toml` / `tauri.conf.json` |
 | SAGE Intelligence | `0.1.0` | `crates/ai-core/Cargo.toml`（workspace 继承） |
-| Intelligence 来源 | 合并自 `qiufengquq/sage-intelligence` @ `33be312c` | 本仓库 `crates/` |
+| Intelligence 来源 | 合并自 `qiufengquq/sage-intelligence` @ `b9990e9` | 本仓库 `crates/`（workspace 成员） |
 | AI Integration Protocol | `1` | `src-tauri/src/ai/version.rs::PROTOCOL_VERSION` |
 | 集成方式 | `library`（唯一模式） | 与客户端编译进同一可执行文件，同一 Rust 进程 |
 | Build Channel | `stable` | — |
 
-> SAGE Intelligence 原为独立仓库（0 tag / 0 release）。自本版本起，其全部源码与提交历史
-> 已合并进本仓库，作为 Cargo workspace 成员 `crates/ai-core`、`crates/ai-core-tauri` 维护，
-> 不再以 git 依赖方式引用，修改后直接随客户端一起编译。
-> 版本仍由 `src-tauri/build.rs` 解析根 `Cargo.lock` 注入，**不允许**在代码里手写；
-> 因已无 git source，`intelligenceCommit` 此时为 `local`。
+> SAGE Intelligence 原为独立仓库（0 tag / 0 release）。自 1.0.1 起，其源码已合并进本仓库，
+> 作为 Cargo workspace 成员 `crates/ai-core`、`crates/ai-core-tauri` 维护，不再以 git
+> 依赖方式引用，修改后直接随客户端一起编译。
+>
+> `intelligenceVersion` 来自 `Cargo.lock`；`intelligenceCommit` 由 `build.rs` 取
+> `crates/` 目录最后一次提交（`git log -1 --format=%H -- crates`）。若该目录有未提交改动，
+> 追加 `-dirty` 后缀；无 git 环境时回退为 `workspace`。**禁止在代码里手写版本号**，
+> 注入失败会被 `ai::version::tests` 拦截。
 
 依赖声明（`src-tauri/Cargo.toml`）：
 
@@ -178,9 +181,11 @@ ai-core-tauri = { path = "../crates/ai-core-tauri" }
 
 ## 7. 升级流程
 
-1. 修改 `src-tauri/Cargo.toml` 中**两处** `rev`（`ai-core` 与 `ai-core-tauri` 必须一致）。
-2. `cargo check` 确认可编译。
-3. `build.rs` 会自动把新的版本与 commit 注入，应用内「设置 → AI 集成」随即可见。
+1. 把上游 `sage-intelligence` 的目标版本同步到 `crates/ai-core` 与 `crates/ai-core-tauri`
+   （两个 crate 必须同源同版本）。
+2. `cargo check -p sage` 确认可编译。
+3. 提交 `crates/` 的变更 —— `build.rs` 会自动把新版本与 commit 注入，
+   应用内「设置 → AI 集成」随即可见。
 4. 若事件名/命令参数/错误码映射有变，递增 `PROTOCOL_VERSION` 并更新本文件。
 5. 在 `docs/RELEASE_NOTES_<version>.md` 记录旧/新 commit。
 
@@ -199,7 +204,7 @@ ai-core-tauri = { path = "../crates/ai-core-tauri" }
 | 运行时版本切换 / 回滚 / 完整性校验 | 版本由构建决定，不可在运行时更换 |
 
 `integration_mode` 恒为 `library`：AI 与客户端编译进同一个可执行文件，运行在同一个
-Rust 进程内。框架升级 = 修改 `Cargo.toml` 的 `rev` + 重新构建安装包。
+Rust 进程内。框架升级 = 同步 `crates/` 源码 + 重新构建安装包。
 
 同时明确：以下内容**不在**安装包内，也不由本集成提供 —— 模型权重、外部 Provider API、
 用户自填的 API Key 与配置数据。安装包只包含编译后的框架代码。

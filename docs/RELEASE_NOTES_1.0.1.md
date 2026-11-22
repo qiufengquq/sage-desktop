@@ -11,7 +11,7 @@
 | 项 | 值 |
 |---|---|
 | SAGE Client | `1.0.1` |
-| SAGE Intelligence | `0.1.0`（commit `33be312c6949afa7f20051ec40fd520002ec5da6`） |
+| SAGE Intelligence | `0.1.0`（源码已合并为 workspace 成员，基线 commit `b9990e9`） |
 | AI Integration Protocol | `1` |
 | 集成方式 | `library`（随客户端编译，无独立进程） |
 
@@ -59,7 +59,8 @@ AI 框架版本与 commit 由 `src-tauri/build.rs` 在构建时从 `Cargo.lock` 
 | 文件 | 改动 |
 |---|---|
 | `package.json` / `src-tauri/Cargo.toml` / `src-tauri/tauri.conf.json` | 版本 → `1.0.1` |
-| `src-tauri/Cargo.toml` | `rust-version` → `1.85`；新增两条 git 依赖 |
+| `src-tauri/Cargo.toml` | `rust-version` → `1.85`；AI 依赖改为 `path` 指向 `crates/*` |
+| 根 `Cargo.toml` | 新增 workspace（`src-tauri` + `crates/ai-core` + `crates/ai-core-tauri`） |
 | `src-tauri/build.rs` | 注入 AI 版本 / commit / 构建时间 / 构建目标 |
 | `vite.config.ts` + `src/vite-env.d.ts` | 注入并声明 `__APP_VERSION__` |
 | `src-tauri/src/state.rs` | `AppState` 增加 `ai`，初始化 AI 状态 |
@@ -105,7 +106,7 @@ AI 框架版本与 commit 由 `src-tauri/build.rs` 在构建时从 `Cargo.lock` 
 |---|---|
 | Rust | **≥ 1.85**（`ai-core` 的 MSRV；本机 1.99.1 通过） |
 | Node.js | ≥ 20 |
-| 网络 | 首次构建需要拉取 git 依赖 `sage-intelligence` |
+| 网络 | 首次构建需拉取 crates.io 依赖（框架源码已随仓库，无需 git 网络） |
 | 平台 | Windows x64（WebView2 系统自带） |
 
 ---
@@ -144,7 +145,7 @@ AI 框架版本与 commit 由 `src-tauri/build.rs` 在构建时从 `Cargo.lock` 
 6. **架构决策：不采用 Sidecar / 独立 Runtime / 本地 HTTP 服务**。AI 与客户端同进程、
    同一个可执行文件；升级通过更新 Cargo 依赖并重新构建实现，没有独立下载/更新/回滚。
    `integration_mode` 恒为 `library`。
-7. 首次构建依赖网络拉取 git 依赖；离线环境无法构建。
+7. 首次构建需拉取 crates.io 依赖；框架源码已随仓库，不再依赖 git 网络。
 
 ---
 

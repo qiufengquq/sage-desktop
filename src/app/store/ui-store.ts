@@ -1,19 +1,19 @@
 import { create } from "zustand";
 import { persist } from "zustand/middleware";
-import type { ThemeMode } from "@/types";
+import type { AccentMode, ThemeMode } from "@/types";
 
 interface UiState {
   theme: ThemeMode;
   sidebarCollapsed: boolean;
   commandOpen: boolean;
-  accent: "brand" | "ember";
+  accent: AccentMode;
   density: "comfortable" | "compact";
   setTheme: (theme: ThemeMode) => void;
   toggleTheme: () => void;
   setSidebarCollapsed: (collapsed: boolean) => void;
   toggleSidebar: () => void;
   setCommandOpen: (open: boolean) => void;
-  setAccent: (accent: "brand" | "ember") => void;
+  setAccent: (accent: AccentMode) => void;
   setDensity: (density: "comfortable" | "compact") => void;
 }
 

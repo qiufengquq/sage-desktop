@@ -23,7 +23,8 @@ export interface UserProfile {
 }
 
 export type ThemeMode = "light" | "dark" | "system";
-export type AccentMode = "brand" | "ember";
+/** 强调色主题：只替换品牌语义变量，不改变表面 / 文字 / 语义色 */
+export type AccentMode = "brand" | "ember" | "ocean" | "violet" | "rose" | "amber";
 
 export interface AppearanceSettings {
   theme: ThemeMode;

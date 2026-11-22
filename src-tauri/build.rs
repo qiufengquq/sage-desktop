@@ -1,10 +1,16 @@
 //! 构建脚本：注入 AI 框架的版本与构建信息。
 //!
-//! 为什么从 `Cargo.lock` 读：版本号由 Cargo 解析，手写在代码里会漂移。
-//! SAGE Intelligence 已并入本仓库（`crates/ai-core`、`crates/ai-core-tauri`），
-//! 因此 lock 位于 workspace 根，且 `ai-core` 是 path 依赖、没有 `source = "git+..."`；
-//! 此时 commit 记为 `local`，表示源码就在本仓库内。
+//! 两种仓库形态都要支持：
+//!   1. **monorepo（当前）**：`crates/ai-core` 是 workspace 成员，`Cargo.lock` 在仓库根，
+//!      依赖没有 `source` 字段，commit 需从 git 历史取；
+//!   2. **独立仓库（历史形态）**：`ai-core` 是 git 依赖，`Cargo.lock` 的
+//!      `source = "git+...#<sha>"` 直接给出 commit。
+//!
+//! 注入失败不 panic，但会写入 `unknown` / `workspace`，并由
+//! `ai::version::tests` 断言拦截，避免"界面上显示一个假版本"。
 
+use std::path::{Path, PathBuf};
+use std::process::Command;
 use std::time::{SystemTime, UNIX_EPOCH};
 
 fn main() {
@@ -13,21 +19,59 @@ fn main() {
 }
 
 fn inject_build_info() {
-    // workspace 根在仓库根，lock 在 src-tauri 的上一级。
-    println!("cargo:rerun-if-changed=../Cargo.lock");
-    println!("cargo:rerun-if-changed=tauri.conf.json");
+    let manifest_dir = std::env::var("CARGO_MANIFEST_DIR")
+        .map(PathBuf::from)
+        .unwrap_or_else(|_| PathBuf::from("."));
+    let root = workspace_root(&manifest_dir);
+    let lock_path = find_lock(&manifest_dir, &root);
 
-    let lock = std::fs::read_to_string("../Cargo.lock").unwrap_or_default();
-    let (version, commit) = find_package(&lock, "ai-core").unwrap_or_default();
+    println!("cargo:rerun-if-changed=build.rs");
+    if let Some(lock) = &lock_path {
+        println!("cargo:rerun-if-changed={}", lock.display());
+    }
+    println!("cargo:rerun-if-changed={}", root.join("crates/ai-core/Cargo.toml").display());
+
+    let lock = lock_path
+        .and_then(|path| std::fs::read_to_string(path).ok())
+        .unwrap_or_default();
+
+    let version = find_package(&lock, "ai-core")
+        .map(|(version, _)| version)
+        .filter(|value| !value.is_empty())
+        .unwrap_or_else(|| manifest_version(&root).unwrap_or_default());
+
+    let commit = resolve_commit(&root, &lock);
 
     println!("cargo:rustc-env=SAGE_AI_CORE_VERSION={}", fallback(&version, "unknown"));
-    // path 依赖没有 git source，源码已内联在本仓库，用 `local` 标记。
-    println!("cargo:rustc-env=SAGE_AI_CORE_COMMIT={}", fallback(&commit, "local"));
+    println!("cargo:rustc-env=SAGE_AI_CORE_COMMIT={}", fallback(&commit, "unknown"));
     println!("cargo:rustc-env=SAGE_BUILD_TIME={}", rfc3339_now());
     println!(
         "cargo:rustc-env=SAGE_BUILD_TARGET={}",
         std::env::var("TARGET").unwrap_or_else(|_| "unknown".to_string())
     );
+}
+
+/// monorepo 时 `Cargo.lock` 在 `src-tauri` 的上一层。
+fn workspace_root(manifest_dir: &Path) -> PathBuf {
+    match manifest_dir.parent() {
+        Some(parent) if parent.join("Cargo.toml").exists() => parent.to_path_buf(),
+        _ => manifest_dir.to_path_buf(),
+    }
+}
+
+fn find_lock(manifest_dir: &Path, root: &Path) -> Option<PathBuf> {
+    [manifest_dir.join("Cargo.lock"), root.join("Cargo.lock")]
+        .into_iter()
+        .find(|candidate| candidate.exists())
+}
+
+/// `crates/ai-core/Cargo.toml` 里的 `version`，作为 lock 缺失时的兜底。
+fn manifest_version(root: &Path) -> Option<String> {
+    let raw = std::fs::read_to_string(root.join("crates/ai-core/Cargo.toml")).ok()?;
+    raw.lines()
+        .map(str::trim)
+        .find_map(|line| line.strip_prefix("version = "))
+        .map(|value| value.trim_matches('"').to_string())
 }
 
 fn fallback(value: &str, when_empty: &str) -> String {
@@ -38,7 +82,7 @@ fn fallback(value: &str, when_empty: &str) -> String {
     }
 }
 
-/// 在 Cargo.lock 中按包名定位版本与 git commit。
+/// 在 Cargo.lock 中按包名定位版本与 git commit（path 依赖的 commit 为空）。
 fn find_package(lock: &str, name: &str) -> Option<(String, String)> {
     let target = format!("name = \"{name}\"");
     for block in lock.split("[[package]]") {
@@ -65,6 +109,44 @@ fn find_package(lock: &str, name: &str) -> Option<(String, String)> {
         }
     }
     None
+}
+
+/// 解析"实际编译进来的框架代码"对应的 commit。
+///
+/// 优先级：git 依赖的 source（独立仓库形态）→ `crates/` 最后一次提交
+/// （monorepo 形态，能精确定位框架代码范围）→ 仓库 HEAD → `workspace`。
+fn resolve_commit(root: &Path, lock: &str) -> String {
+    if let Some((_, commit)) = find_package(lock, "ai-core") {
+        if !commit.is_empty() {
+            return commit;
+        }
+    }
+
+    if let Some(sha) = git(root, &["log", "-1", "--format=%H", "--", "crates"]) {
+        let dirty = git(root, &["status", "--porcelain", "--", "crates"])
+            .map(|status| !status.trim().is_empty())
+            .unwrap_or(false);
+        return if dirty { format!("{sha}-dirty") } else { sha };
+    }
+
+    git(root, &["rev-parse", "HEAD"]).unwrap_or_else(|| "workspace".to_string())
+}
+
+fn git(root: &Path, args: &[&str]) -> Option<String> {
+    let output = Command::new("git")
+        .current_dir(root)
+        .args(args)
+        .output()
+        .ok()?;
+    if !output.status.success() {
+        return None;
+    }
+    let text = String::from_utf8(output.stdout).ok()?.trim().to_string();
+    if text.is_empty() {
+        None
+    } else {
+        Some(text)
+    }
 }
 
 /// 不引入额外 build-dependency：用 UNIX 秒数生成 UTC RFC3339。
