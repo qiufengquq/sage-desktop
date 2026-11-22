@@ -10,20 +10,23 @@
 | 项 | 值 | 来源 |
 |---|---|---|
 | SAGE Client | `1.0.1` | `package.json` / `src-tauri/Cargo.toml` / `tauri.conf.json` |
-| SAGE Intelligence | `0.1.0` | `Cargo.lock` → `cargo:rustc-env` |
-| Intelligence Commit | `33be312c6949afa7f20051ec40fd520002ec5da6` | 同上（`source = "git+...#<sha>"`） |
+| SAGE Intelligence | `0.1.0` | `crates/ai-core/Cargo.toml`（workspace 继承） |
+| Intelligence 来源 | 合并自 `qiufengquq/sage-intelligence` @ `33be312c` | 本仓库 `crates/` |
 | AI Integration Protocol | `1` | `src-tauri/src/ai/version.rs::PROTOCOL_VERSION` |
 | 集成方式 | `library`（唯一模式） | 与客户端编译进同一可执行文件，同一 Rust 进程 |
 | Build Channel | `stable` | — |
 
-> 上游目前 **0 tag / 0 release**，因此 `Cargo.toml` 使用 `rev = "<commit>"` 锁定。
-> 版本与 commit 由 `src-tauri/build.rs` 解析 `Cargo.lock` 注入，**不允许**在代码里手写。
+> SAGE Intelligence 原为独立仓库（0 tag / 0 release）。自本版本起，其全部源码与提交历史
+> 已合并进本仓库，作为 Cargo workspace 成员 `crates/ai-core`、`crates/ai-core-tauri` 维护，
+> 不再以 git 依赖方式引用，修改后直接随客户端一起编译。
+> 版本仍由 `src-tauri/build.rs` 解析根 `Cargo.lock` 注入，**不允许**在代码里手写；
+> 因已无 git source，`intelligenceCommit` 此时为 `local`。
 
 依赖声明（`src-tauri/Cargo.toml`）：
 
 ```toml
-ai-core = { git = "https://github.com/qiufengquq/sage-intelligence", rev = "33be312c..." }
-ai-core-tauri = { git = "https://github.com/qiufengquq/sage-intelligence", rev = "33be312c..." }
+ai-core = { path = "../crates/ai-core" }
+ai-core-tauri = { path = "../crates/ai-core-tauri" }
 ```
 
 ---

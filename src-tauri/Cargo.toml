@@ -22,15 +22,8 @@ serde_json = "1"
 rusqlite = { version = "0.32", features = ["bundled", "backup"] }
 chrono = { version = "0.4", features = ["serde"] }
 sha2 = "0.10"
-# SAGE Intelligence：Library 集成。上游目前 0 tag / 0 release，
-# 因此锁定到具体 commit（见 docs/AI_INTEGRATION.md §版本）。
-# 升级时两行必须同时改，并在 RELEASE_NOTES 记录新的 commit。
-ai-core = { git = "https://github.com/qiufengquq/sage-intelligence", rev = "33be312c6949afa7f20051ec40fd520002ec5da6" }
-ai-core-tauri = { git = "https://github.com/qiufengquq/sage-intelligence", rev = "33be312c6949afa7f20051ec40fd520002ec5da6" }
-
-[profile.release]
-codegen-units = 1
-lto = true
-opt-level = "s"
-panic = "abort"
-strip = true
+# SAGE Intelligence：已合并为本仓库的 workspace 成员（原 sage-intelligence 仓库，
+# commit 33be312c）。改动 crates/ 下的代码会立即反映到这里，不再需要升级 rev。
+# 说明见 docs/AI_INTEGRATION.md §版本。
+ai-core = { path = "../crates/ai-core" }
+ai-core-tauri = { path = "../crates/ai-core-tauri" }

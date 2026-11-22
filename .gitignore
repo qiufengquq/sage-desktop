@@ -10,8 +10,11 @@ dist-ssr/
 .dev.log
 
 # Rust / Tauri
+# workspace 根在仓库根，产物落在 ./target；src-tauri/target 为旧布局遗留，一并忽略。
+/target
 src-tauri/target/
 src-tauri/gen/schemas/
+**/*.rs.bk
 
 # 编辑器
 .vscode/*

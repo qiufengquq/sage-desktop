@@ -1,8 +1,9 @@
 //! 构建脚本：注入 AI 框架的版本与构建信息。
 //!
-//! 为什么从 `Cargo.lock` 读：SAGE Intelligence 目前没有 tag / release，
-//! 唯一可追溯的"实际编译进来的那个版本"就是 Cargo.lock 里记录的
-//! `version` 与 `source = "git+...#<commit>"`。手写在代码里的版本号会漂移。
+//! 为什么从 `Cargo.lock` 读：版本号由 Cargo 解析，手写在代码里会漂移。
+//! SAGE Intelligence 已并入本仓库（`crates/ai-core`、`crates/ai-core-tauri`），
+//! 因此 lock 位于 workspace 根，且 `ai-core` 是 path 依赖、没有 `source = "git+..."`；
+//! 此时 commit 记为 `local`，表示源码就在本仓库内。
 
 use std::time::{SystemTime, UNIX_EPOCH};
 
@@ -12,14 +13,16 @@ fn main() {
 }
 
 fn inject_build_info() {
-    println!("cargo:rerun-if-changed=Cargo.lock");
+    // workspace 根在仓库根，lock 在 src-tauri 的上一级。
+    println!("cargo:rerun-if-changed=../Cargo.lock");
     println!("cargo:rerun-if-changed=tauri.conf.json");
 
-    let lock = std::fs::read_to_string("Cargo.lock").unwrap_or_default();
+    let lock = std::fs::read_to_string("../Cargo.lock").unwrap_or_default();
     let (version, commit) = find_package(&lock, "ai-core").unwrap_or_default();
 
     println!("cargo:rustc-env=SAGE_AI_CORE_VERSION={}", fallback(&version, "unknown"));
-    println!("cargo:rustc-env=SAGE_AI_CORE_COMMIT={}", fallback(&commit, "unknown"));
+    // path 依赖没有 git source，源码已内联在本仓库，用 `local` 标记。
+    println!("cargo:rustc-env=SAGE_AI_CORE_COMMIT={}", fallback(&commit, "local"));
     println!("cargo:rustc-env=SAGE_BUILD_TIME={}", rfc3339_now());
     println!(
         "cargo:rustc-env=SAGE_BUILD_TARGET={}",
